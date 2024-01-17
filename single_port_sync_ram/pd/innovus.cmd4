@@ -1,0 +1,2831 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Tue Dec 19 11:12:09 2023                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v17.12-s095_1 (64bit) 11/09/2017 12:10 (Linux 2.6.18-194.el5)
+#@(#)CDS: NanoRoute 17.12-s095_1 NR171102-1913/17_12-UB (database version 2.30, 405.7.1) {superthreading v1.44}
+#@(#)CDS: AAE 17.12-s040 (64bit) 11/09/2017 (Linux 2.6.18-194.el5)
+#@(#)CDS: CTE 17.12-s036_1 () Nov  2 2017 09:33:40 ( )
+#@(#)CDS: SYNTECH 17.12-s012_1 () Oct 31 2017 04:30:11 ( )
+#@(#)CDS: CPE v17.12-s076
+#@(#)CDS: IQRC/TQRC 16.1.1-s220 (64bit) Fri Aug  4 09:53:48 PDT 2017 (Linux 2.6.18-194.el5)
+
+getVersion
+setLayerPreference screen -isVisible 1 -isSelectable 1 -color #ffcbcf -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference areaIo -isVisible 1 -isSelectable 1 -color #888b8c -stipple dot4
+setLayerPreference blackBox -isVisible 1 -isSelectable 1 -color #626565 -stipple solid
+setLayerPreference block -isVisible 1 -isSelectable 1 -color #888b8c -stippleData 8 4 {0x55 0xaa 0x55 0xaa}
+setLayerPreference pinblock -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference obsblock -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference bumpBack -isVisible 1 -isSelectable 1 -color {DodgerBlue3 red orange #c88686} -stipple grid
+setLayerPreference bump -isVisible 1 -isSelectable 1 -color {DodgerBlue3 red orange #c88686} -stipple dot4
+setLayerPreference busguide -isVisible 1 -isSelectable 1 -color {pink #ffc0ff #00ff00 #0000ff #ffff00 #ff00ff #00ffff #ff8a00 #00ff8e #8e00ff #8eff00 #ff008e #008aff #ff8a8e #8eff8e #8e8aff #ffff8e #ff8aff #8effff #ff5500 #00ff59 #5900ff #59ff00 #ff0055 #0055ff #bebebe #808080 #a0a0a0 #ff80ff #ff0000} -stippleData 8 8 {0x00 0x00 0x00 0x08 0x10 0x00 0x00 0x00}
+setLayerPreference clock -isVisible 1 -isSelectable 1 -color white -stipple none
+setLayerPreference coverCell -isVisible 1 -isSelectable 1 -color #888b8c -stipple dot4
+setLayerPreference cover -isVisible 1 -isSelectable 1 -color #ffaa00 -stipple dot4
+setLayerPreference drcRegion -isVisible 1 -isSelectable 1 -color magenta -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference datapath -isVisible 1 -isSelectable 1 -color LightBlue -stippleData 8 4 {0x00 0x00 0xff 0x00}
+setLayerPreference fence -isVisible 1 -isSelectable 1 -color #ff9966 -stippleData 8 4 {0x55 0xaa 0x55 0xaa}
+setLayerPreference fillBlk -isVisible 1 -isSelectable 1 -color yellow -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference fixed -isVisible 1 -isSelectable 1 -color #00d0d0 -stipple dot4
+setLayerPreference pgGround -isVisible 1 -isSelectable 1 -color white -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference guide -isVisible 1 -isSelectable 1 -color #f3b2e3 -stippleData 8 4 {0x55 0xaa 0x55 0xaa}
+setLayerPreference io -isVisible 1 -isSelectable 1 -color #888b8c -stipple dot4
+setLayerPreference pinio -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference obsio -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference ioSlot -isVisible 1 -isSelectable 1 -color #009900 -stippleData 8 8 {0x02 0x02 0x02 0x02 0x02 0xff 0x02 0x02}
+setLayerPreference piniopin -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference ioRow -isVisible 1 -isSelectable 1 -color #4b4b4b -stippleData 8 4 {0x55 0xaa 0x55 0xaa}
+setLayerPreference powerNet -isVisible 1 -isSelectable 1 -color {#004e72 #a2cd5a #caff70 #eedd82 #ffff00 #ffd700 #ffa500 #ff7f50 #ff0000 green #8cf600 #aef600 #d2f600 yellow gold orange DarkOrange red #f2f2f6f6f8f8 white} -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+setLayerPreference inst -isVisible 1 -isSelectable 1 -color #888b8c -stipple dot4
+setLayerPreference isolation -isVisible 1 -isSelectable 1 -color #00ff00 -stipple dot4
+setLayerPreference macroOnly -isVisible 1 -isSelectable 1 -color green -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference congTag -isVisible 1 -isSelectable 1 -color {red orange green} -stipple solid
+setLayerPreference metalFill -isVisible 1 -isSelectable 1 -color brown -stipple none
+setLayerPreference hinst -isVisible 1 -isSelectable 1 -color #f3b2e3 -stippleData 8 4 {0x55 0xaa 0x55 0xaa}
+setLayerPreference obstruct -isVisible 1 -isSelectable 1 -color #582720 -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference funcother -isVisible 1 -isSelectable 1 -color #c1cadd -stipple dot4
+setLayerPreference pinother -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference obsother -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference obsoverlap -isVisible 1 -isSelectable 1 -color {} -stippleData 0 0 {}
+setLayerPreference partition -isVisible 1 -isSelectable 1 -color #cf7d5f -stippleData 8 4 {0x55 0xaa 0x55 0xaa}
+setLayerPreference ptnFeed -isVisible 1 -isSelectable 1 -color white -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference ptnPinBlk -isVisible 1 -isSelectable 1 -color red -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference phyCell -isVisible 1 -isSelectable 1 -color #888b8c -stipple dot4
+setLayerPreference routeGuide -isVisible 1 -isSelectable 1 -color white -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference place -isVisible 1 -isSelectable 1 -color #c1cadd -stipple dot4
+setLayerPreference pgPower -isVisible 1 -isSelectable 1 -color white -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference pwrdm -isVisible 1 -isSelectable 1 -color {#de0000 gold #9F8050 cyan red green blue yellow magenta orange purple brown pink skyblue navy sandybrown DodgerBlue3 #d0d0d0 #e0e0e0 #d8d8d8 #e8e8e8 #666666 #368229 #293682 #a8a8a8 #b8b8b8 #903390 #d19090 #c023d0 #c84598 #45c898 #98c545} -stippleData 8 4 {0x55 0xaa 0x55 0xaa}
+setLayerPreference netRect -isVisible 0 -isSelectable 0 -color #004ed2 -stippleData 8 4 {0x12 0x55 0x12 0x55}
+setLayerPreference pwrswt -isVisible 1 -isSelectable 1 -color #ff55ff -stipple dot4
+setLayerPreference region -isVisible 1 -isSelectable 1 -color #f3b283 -stippleData 8 4 {0x55 0xaa 0x55 0xaa}
+setLayerPreference layerBlk -isVisible 1 -isSelectable 1 -color yellow -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference flop -isVisible 1 -isSelectable 1 -color #00d0d0 -stipple dot4
+setLayerPreference shift -isVisible 1 -isSelectable 1 -color #ff0000 -stipple dot4
+setLayerPreference net -isVisible 1 -isSelectable 1 -color blue -stipple none
+setLayerPreference sizeBlkg -isVisible 1 -isSelectable 1 -color magenta -stipple dot4
+setLayerPreference slotBlk -isVisible 1 -isSelectable 1 -color yellow -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference softfix -isVisible 1 -isSelectable 1 -color #ff55ff -stipple dot4
+setLayerPreference power -isVisible 1 -isSelectable 1 -color white -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference stdRow -isVisible 1 -isSelectable 0 -color #4b4b4b -stipple none
+setLayerPreference stdCell -isVisible 1 -isSelectable 1 -color #888b8c -stipple dot4
+setLayerPreference pinstdCell -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference obsstdCell -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference term -isVisible 1 -isSelectable 1 -color #f0d218 -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+setLayerPreference trimBlk -isVisible 1 -isSelectable 1 -color lightblue -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference undefBlk -isVisible 1 -isSelectable 1 -color yellow -stippleData 8 4 {0x20 0x04 0x20 0x04}
+setLayerPreference unplace -isVisible 1 -isSelectable 1 -color #aa5500 -stipple dot4
+setLayerPreference violation -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference VirtualShape -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference whatIfShape -isVisible 1 -isSelectable 1 -color white -stipple none
+setLayerPreference aggress -isVisible 1 -isSelectable 0 -color white -stipple solid
+setLayerPreference blockHalo -isVisible 1 -isSelectable 0 -color #d26c6c -stipple solid
+setLayerPreference pGrid -isVisible 0 -isSelectable 0 -color gray -stipple none
+setLayerPreference blkLink -isVisible 1 -isSelectable 0 -color green -stippleData 0 0 {}
+setLayerPreference eol -isVisible 0 -isSelectable 0 -color {} -stipple none
+setLayerPreference bumpConnect -isVisible 1 -isSelectable 0 -color yellow -stipple none
+setLayerPreference layoutObj -isVisible 0 -isSelectable 0 -color blue -stipple none
+setLayerPreference channel -isVisible 1 -isSelectable 1 -color red -stipple none
+setLayerPreference congChan -isVisible 0 -isSelectable 0 -color red -stipple none
+setLayerPreference congestObj -isVisible 0 -isSelectable 1 -color white -stipple none
+setLayerPreference congest -isVisible 0 -isSelectable 1 -color red -stippleData 8 4 {0x12 0x48 0x21 0x84}
+setLayerPreference densityMap -isVisible 0 -isSelectable 1 -color {} -stippleData 0 0 {}
+setLayerPreference unknowState -isVisible 1 -isSelectable 0 -color white -stipple none
+setLayerPreference effectRes -isVisible 1 -isSelectable 1 -color { #8cf600 #aef600 #d2f600 yellow gold orange DarkOrange red white blue} -stipple none
+setLayerPreference fGrid -isVisible 0 -isSelectable 1 -color gray -stipple none
+setLayerPreference fiGrid -isVisible 0 -isSelectable 0 -color gray -stipple none
+setLayerPreference fmGrid -isVisible 0 -isSelectable 0 -color gray -stipple none
+setLayerPreference fpGrid -isVisible 0 -isSelectable 0 -color gray -stipple none
+setLayerPreference flightLine -isVisible 1 -isSelectable 0 -color blue -stipple none
+setLayerPreference gcell -isVisible 0 -isSelectable 0 -color yellow -stipple none
+setLayerPreference gcellOvflow -isVisible 0 -isSelectable 1 -color white -stipple none
+setLayerPreference goObj -isVisible 1 -isSelectable 1 -color yellow -stipple none
+setLayerPreference gridRes -isVisible 1 -isSelectable 1 -color red -stipple none
+setLayerPreference iGrid -isVisible 0 -isSelectable 0 -color gray -stipple none
+setLayerPreference lithoHalo -isVisible 1 -isSelectable 0 -color purple -stipple brick
+setLayerPreference macroSitePattern -isVisible 0 -isSelectable 0 -color #58d0ca -stipple none
+setLayerPreference mGrid -isVisible 0 -isSelectable 0 -color white -stipple none
+setLayerPreference metalDensityMap -isVisible 0 -isSelectable 1 -color {} -stippleData 0 0 {}
+setLayerPreference nonPrefTrackObj -isVisible 0 -isSelectable 0 -color white -stipple none
+setLayerPreference overlapBlk -isVisible 0 -isSelectable 0 -color green -stipple solid
+setLayerPreference overlapGuide -isVisible 0 -isSelectable 0 -color blue -stipple solid
+setLayerPreference overlapMacro -isVisible 0 -isSelectable 0 -color white -stipple solid
+setLayerPreference pgViaGridObj -isVisible 0 -isSelectable 0 -color white -stipple none
+setLayerPreference gdsii -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference pinDensityMap -isVisible 0 -isSelectable 1 -color {} -stippleData 0 0 {}
+setLayerPreference pinText -isVisible 1 -isSelectable 0 -color white -stipple none
+setLayerPreference portNum -isVisible 0 -isSelectable 0 -color white -stipple none
+setLayerPreference powerDensity -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference trackObj -isVisible 0 -isSelectable 0 -color white -stipple none
+setLayerPreference reduced -isVisible 1 -isSelectable 1 -color #58d0ca -stipple none
+setLayerPreference relFPlan -isVisible 1 -isSelectable 0 -color yellow -stipple solid
+setLayerPreference resizeFPLine2 -isVisible 1 -isSelectable 0 -color green -stipple solid
+setLayerPreference resizeFPLine1 -isVisible 1 -isSelectable 0 -color yellow -stipple solid
+setLayerPreference routeCongest -isVisible 0 -isSelectable 0 -color {} -stippleData 0 0 {}
+setLayerPreference routingHalo -isVisible 1 -isSelectable 0 -color brown -stipple brick
+setLayerPreference sitePattern -isVisible 0 -isSelectable 0 -color #4b4b4b -stipple none
+setLayerPreference ruler -isVisible 1 -isSelectable 1 -color yellow -stipple none
+setLayerPreference rulerText -isVisible 1 -isSelectable 1 -color yellow -stipple none
+setLayerPreference select -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference shield -isVisible 1 -isSelectable 0 -color white -stipple none
+setLayerPreference text -isVisible 1 -isSelectable 0 -color white -stipple none
+setLayerPreference timingMap -isVisible 0 -isSelectable 1 -color {} -stippleData 0 0 {}
+setLayerPreference slack -isVisible 1 -isSelectable 1 -color {} -stippleData 0 0 {}
+setLayerPreference trialTrack -isVisible 0 -isSelectable 1 -color white -stipple none
+setLayerPreference trimGridObj -isVisible 0 -isSelectable 0 -color white -stipple none
+setLayerPreference trim -isVisible 1 -isSelectable 0 -color white -stipple none
+setLayerPreference userGrid -isVisible 0 -isSelectable 0 -color gray -stipple none
+setLayerPreference ctdObj -isVisible 1 -isSelectable 1 -color {red green blue yellow magenta cyan orange purple white} -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+setLayerPreference clkTree -isVisible 1 -isSelectable 1 -color {#004e72 #004ea8 #004ed2 #004ef2 #00acf2 #00caf2 #00f2f2 #00f2d2 #00f2aa green #8cf600 #aef600 #d2f600 yellow #fed600 #feb800 #fe9800 red #f2f2f6f6f8f8 white} -stipple none
+setLayerPreference dpt -isVisible 1 -isSelectable 0 -color {gray red green yellow} -stipple none
+setLayerPreference fpConn -isVisible 1 -isSelectable 1 -color {red green blue yellow magenta cyan orange purple white} -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+setLayerPreference flColors -isVisible 0 -isSelectable 1 -color {red orange yellow green blue white white white white white} -stippleData 0 0 {}
+setLayerPreference gtdObj -isVisible 1 -isSelectable 1 -color {#ffffff #ff0000 #ffc0cb #ffa500 #ffd700 #00ff00 #006400 #1dd8e6 #00008b} -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+setLayerPreference congestH -isVisible 0 -isSelectable 1 -color {white white white red yellow green cyan blue black black} -stipple none
+setLayerPreference checkFPlanSpace -isVisible 1 -isSelectable 1 -color {red orange white} -stipple solid
+setLayerPreference substrateNoise -isVisible 0 -isSelectable 0 -color {#0055ff #00c9ff #00ff77 #45ff00 #8bff00 #cbff00 #fff700 #ff9d00 #ff2f00 #c30000} -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+setLayerPreference thermal -isVisible 0 -isSelectable 1 -color {#0055ff #00c9ff #00ff77 #45ff00 #8bff00 #cbff00 #fff700 #ff9d00 #ff2f00 #c30000} -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+setLayerPreference congestV -isVisible 0 -isSelectable 1 -color {white white white red yellow green cyan blue black black} -stipple none
+setLayerPreference world -isVisible 1 -isSelectable 1 -color {yellow green blue} -stipple none
+setLayerPreference M0 -isVisible 1 -isSelectable 1 -color sandybrown -stipple slash2
+setLayerPreference M0Hi -isVisible 1 -isSelectable 1 -color white -stipple slash2
+setLayerPreference M0Cont -isVisible 1 -isSelectable 1 -color plum -stipple dot4
+setLayerPreference M0Track -isVisible 1 -isSelectable 1 -color sandybrown -stipple cross
+setLayerPreference M0Pin -isVisible 1 -isSelectable 1 -color sandybrown -stipple cross
+setLayerPreference M0ContPin -isVisible 1 -isSelectable 1 -color sandybrown -stipple dot4
+setLayerPreference M0RB -isVisible 1 -isSelectable 1 -color sandybrown -stipple brick
+setLayerPreference M0ContRB -isVisible 1 -isSelectable 1 -color sandybrown -stipple dot8_2
+setLayerPreference M0Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M0ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M0Text -isVisible 1 -isSelectable 1 -color sandybrown -stippleData 0 0 {}
+setLayerPreference M0EOL -isVisible 1 -isSelectable 1 -color sandybrown -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M0Patch -isVisible 1 -isSelectable 1 -color sandybrown -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M1 -isVisible 1 -isSelectable 1 -color blue -stipple backslash2
+setLayerPreference M1Hi -isVisible 1 -isSelectable 1 -color white -stipple backslash2
+setLayerPreference M1Cont -isVisible 1 -isSelectable 1 -color blue -stipple dot4
+setLayerPreference M1Track -isVisible 1 -isSelectable 1 -color blue -stipple cross
+setLayerPreference M1Pin -isVisible 1 -isSelectable 1 -color blue -stipple cross
+setLayerPreference M1ContPin -isVisible 1 -isSelectable 1 -color blue -stipple dot4
+setLayerPreference M1RB -isVisible 1 -isSelectable 1 -color blue -stipple brick
+setLayerPreference M1ContRB -isVisible 1 -isSelectable 1 -color blue -stipple dot8_1
+setLayerPreference M1Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M1ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M1Text -isVisible 1 -isSelectable 0 -color blue -stippleData 0 0 {}
+setLayerPreference M1EOL -isVisible 1 -isSelectable 1 -color blue -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M1Patch -isVisible 1 -isSelectable 1 -color blue -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M2 -isVisible 1 -isSelectable 1 -color red -stipple slash2
+setLayerPreference M2Hi -isVisible 1 -isSelectable 1 -color white -stipple slash2
+setLayerPreference M2Cont -isVisible 1 -isSelectable 1 -color red -stipple dot4
+setLayerPreference M2Track -isVisible 1 -isSelectable 1 -color red -stipple cross
+setLayerPreference M2Pin -isVisible 1 -isSelectable 1 -color red -stipple cross
+setLayerPreference M2ContPin -isVisible 1 -isSelectable 1 -color red -stipple dot4
+setLayerPreference M2RB -isVisible 1 -isSelectable 1 -color red -stipple brick
+setLayerPreference M2ContRB -isVisible 1 -isSelectable 1 -color red -stipple dot8_2
+setLayerPreference M2Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M2ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M2Text -isVisible 1 -isSelectable 0 -color red -stippleData 0 0 {}
+setLayerPreference M2EOL -isVisible 1 -isSelectable 1 -color red -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M2Patch -isVisible 1 -isSelectable 1 -color red -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M3 -isVisible 1 -isSelectable 1 -color #00d000 -stipple backslash
+setLayerPreference M3Hi -isVisible 1 -isSelectable 1 -color white -stipple backslash
+setLayerPreference M3Cont -isVisible 1 -isSelectable 1 -color #00d000 -stipple dot4
+setLayerPreference M3Track -isVisible 1 -isSelectable 1 -color #00d000 -stipple cross
+setLayerPreference M3Pin -isVisible 1 -isSelectable 1 -color #00d000 -stipple cross
+setLayerPreference M3ContPin -isVisible 1 -isSelectable 1 -color #00d000 -stipple dot4
+setLayerPreference M3RB -isVisible 1 -isSelectable 1 -color #00d000 -stipple brick
+setLayerPreference M3ContRB -isVisible 1 -isSelectable 1 -color #00d000 -stipple dot8_1
+setLayerPreference M3Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M3ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M3Text -isVisible 1 -isSelectable 0 -color #00d000 -stippleData 0 0 {}
+setLayerPreference M3EOL -isVisible 1 -isSelectable 1 -color #00d000 -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M3Patch -isVisible 1 -isSelectable 1 -color #00d000 -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M4 -isVisible 1 -isSelectable 1 -color #d0d000 -stipple slash
+setLayerPreference M4Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M4Cont -isVisible 1 -isSelectable 1 -color #d0d000 -stipple dot4
+setLayerPreference M4Track -isVisible 1 -isSelectable 1 -color #d0d000 -stipple cross
+setLayerPreference M4Pin -isVisible 1 -isSelectable 1 -color #d0d000 -stipple cross
+setLayerPreference M4ContPin -isVisible 1 -isSelectable 1 -color #d0d000 -stipple dot4
+setLayerPreference M4RB -isVisible 1 -isSelectable 1 -color #d0d000 -stipple brick
+setLayerPreference M4ContRB -isVisible 1 -isSelectable 1 -color #d0d000 -stipple dot8_2
+setLayerPreference M4Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M4ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M4Text -isVisible 1 -isSelectable 0 -color #d0d000 -stippleData 0 0 {}
+setLayerPreference M4EOL -isVisible 1 -isSelectable 1 -color #d0d000 -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M4Patch -isVisible 1 -isSelectable 1 -color #d0d000 -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M5 -isVisible 1 -isSelectable 1 -color brown -stipple backslash
+setLayerPreference M5Hi -isVisible 1 -isSelectable 1 -color white -stipple backslash
+setLayerPreference M5Cont -isVisible 1 -isSelectable 1 -color brown -stipple dot4
+setLayerPreference M5Track -isVisible 1 -isSelectable 1 -color brown -stipple cross
+setLayerPreference M5Pin -isVisible 1 -isSelectable 1 -color brown -stipple cross
+setLayerPreference M5ContPin -isVisible 1 -isSelectable 1 -color brown -stipple dot4
+setLayerPreference M5RB -isVisible 1 -isSelectable 1 -color brown -stipple brick
+setLayerPreference M5ContRB -isVisible 1 -isSelectable 1 -color brown -stipple dot8_1
+setLayerPreference M5Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M5ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M5Text -isVisible 1 -isSelectable 0 -color brown -stippleData 0 0 {}
+setLayerPreference M5EOL -isVisible 1 -isSelectable 1 -color brown -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M5Patch -isVisible 1 -isSelectable 1 -color brown -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M6 -isVisible 1 -isSelectable 1 -color orange -stipple slash
+setLayerPreference M6Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M6Cont -isVisible 1 -isSelectable 1 -color orange -stipple dot4
+setLayerPreference M6Track -isVisible 1 -isSelectable 1 -color orange -stipple cross
+setLayerPreference M6Pin -isVisible 1 -isSelectable 1 -color orange -stipple cross
+setLayerPreference M6ContPin -isVisible 1 -isSelectable 1 -color orange -stipple dot4
+setLayerPreference M6RB -isVisible 1 -isSelectable 1 -color orange -stipple brick
+setLayerPreference M6ContRB -isVisible 1 -isSelectable 1 -color orange -stipple dot8_2
+setLayerPreference M6Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M6ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M6Text -isVisible 1 -isSelectable 0 -color orange -stippleData 0 0 {}
+setLayerPreference M6EOL -isVisible 1 -isSelectable 1 -color orange -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M6Patch -isVisible 1 -isSelectable 1 -color orange -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M7 -isVisible 1 -isSelectable 1 -color #d000d0 -stipple backslash
+setLayerPreference M7Hi -isVisible 1 -isSelectable 1 -color white -stipple backslash
+setLayerPreference M7Cont -isVisible 1 -isSelectable 1 -color #d000d0 -stipple dot4
+setLayerPreference M7Track -isVisible 1 -isSelectable 1 -color #d000d0 -stipple cross
+setLayerPreference M7Pin -isVisible 1 -isSelectable 1 -color #d000d0 -stipple cross
+setLayerPreference M7ContPin -isVisible 1 -isSelectable 1 -color #d000d0 -stipple dot4
+setLayerPreference M7RB -isVisible 1 -isSelectable 1 -color #d000d0 -stipple brick
+setLayerPreference M7ContRB -isVisible 1 -isSelectable 1 -color #d000d0 -stipple dot8_1
+setLayerPreference M7Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M7ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M7Text -isVisible 1 -isSelectable 0 -color #d000d0 -stippleData 0 0 {}
+setLayerPreference M7EOL -isVisible 1 -isSelectable 1 -color #d000d0 -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M7Patch -isVisible 1 -isSelectable 1 -color #d000d0 -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M8 -isVisible 1 -isSelectable 1 -color #00d0d0 -stipple slash
+setLayerPreference M8Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M8Cont -isVisible 1 -isSelectable 1 -color #00d0d0 -stipple dot4
+setLayerPreference M8Track -isVisible 1 -isSelectable 1 -color #00d0d0 -stipple cross
+setLayerPreference M8Pin -isVisible 1 -isSelectable 1 -color #00d0d0 -stipple cross
+setLayerPreference M8ContPin -isVisible 1 -isSelectable 1 -color #00d0d0 -stipple dot4
+setLayerPreference M8RB -isVisible 1 -isSelectable 1 -color #00d0d0 -stipple brick
+setLayerPreference M8ContRB -isVisible 1 -isSelectable 1 -color #00d0d0 -stipple dot8_2
+setLayerPreference M8Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M8ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M8Text -isVisible 1 -isSelectable 0 -color #00d0d0 -stippleData 0 0 {}
+setLayerPreference M8EOL -isVisible 1 -isSelectable 1 -color #00d0d0 -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M8Patch -isVisible 1 -isSelectable 1 -color #00d0d0 -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M9 -isVisible 1 -isSelectable 1 -color saddlebrown -stipple backslash
+setLayerPreference M9Hi -isVisible 1 -isSelectable 1 -color white -stipple backslash
+setLayerPreference M9Cont -isVisible 1 -isSelectable 1 -color saddlebrown -stipple dot4
+setLayerPreference M9Track -isVisible 1 -isSelectable 1 -color saddlebrown -stipple cross
+setLayerPreference M9Pin -isVisible 1 -isSelectable 1 -color saddlebrown -stipple cross
+setLayerPreference M9ContPin -isVisible 1 -isSelectable 1 -color saddlebrown -stipple dot4
+setLayerPreference M9RB -isVisible 1 -isSelectable 1 -color saddlebrown -stipple brick
+setLayerPreference M9ContRB -isVisible 1 -isSelectable 1 -color saddlebrown -stipple dot8_1
+setLayerPreference M9Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M9ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M9Text -isVisible 1 -isSelectable 0 -color saddlebrown -stippleData 0 0 {}
+setLayerPreference M9EOL -isVisible 1 -isSelectable 1 -color saddlebrown -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M9Patch -isVisible 1 -isSelectable 1 -color saddlebrown -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M10 -isVisible 1 -isSelectable 1 -color yellow -stipple slash
+setLayerPreference M10Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M10Cont -isVisible 1 -isSelectable 1 -color yellow -stipple dot4
+setLayerPreference M10Track -isVisible 1 -isSelectable 1 -color yellow -stipple cross
+setLayerPreference M10Pin -isVisible 1 -isSelectable 1 -color yellow -stipple cross
+setLayerPreference M10ContPin -isVisible 1 -isSelectable 1 -color yellow -stipple dot4
+setLayerPreference M10RB -isVisible 1 -isSelectable 1 -color yellow -stipple brick
+setLayerPreference M10ContRB -isVisible 1 -isSelectable 1 -color yellow -stipple dot8_2
+setLayerPreference M10Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M10ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M10Text -isVisible 1 -isSelectable 0 -color yellow -stippleData 0 0 {}
+setLayerPreference M10EOL -isVisible 1 -isSelectable 1 -color yellow -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M10Patch -isVisible 1 -isSelectable 1 -color yellow -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M11 -isVisible 1 -isSelectable 1 -color green -stipple backslash
+setLayerPreference M11Hi -isVisible 1 -isSelectable 1 -color white -stipple backslash
+setLayerPreference M11Cont -isVisible 1 -isSelectable 1 -color green -stipple dot4
+setLayerPreference M11Track -isVisible 1 -isSelectable 1 -color green -stipple cross
+setLayerPreference M11Pin -isVisible 1 -isSelectable 1 -color green -stipple cross
+setLayerPreference M11ContPin -isVisible 1 -isSelectable 1 -color green -stipple dot4
+setLayerPreference M11RB -isVisible 1 -isSelectable 1 -color green -stipple brick
+setLayerPreference M11ContRB -isVisible 1 -isSelectable 1 -color green -stipple dot8_2
+setLayerPreference M11Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M11ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M11Text -isVisible 1 -isSelectable 0 -color green -stippleData 0 0 {}
+setLayerPreference M11EOL -isVisible 1 -isSelectable 1 -color green -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M11Patch -isVisible 1 -isSelectable 1 -color green -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M12 -isVisible 1 -isSelectable 1 -color magenta -stipple slash
+setLayerPreference M12Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M12Cont -isVisible 1 -isSelectable 1 -color magenta -stipple dot4
+setLayerPreference M12Track -isVisible 1 -isSelectable 1 -color magenta -stipple cross
+setLayerPreference M12Pin -isVisible 1 -isSelectable 1 -color magenta -stipple cross
+setLayerPreference M12ContPin -isVisible 1 -isSelectable 1 -color magenta -stipple dot4
+setLayerPreference M12RB -isVisible 1 -isSelectable 1 -color magenta -stipple brick
+setLayerPreference M12ContRB -isVisible 1 -isSelectable 1 -color magenta -stipple dot8_2
+setLayerPreference M12Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M12ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M12Text -isVisible 1 -isSelectable 0 -color magenta -stippleData 0 0 {}
+setLayerPreference M12EOL -isVisible 1 -isSelectable 1 -color magenta -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M12Patch -isVisible 1 -isSelectable 1 -color magenta -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M13 -isVisible 1 -isSelectable 1 -color pink -stipple slash
+setLayerPreference M13Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M13Cont -isVisible 1 -isSelectable 1 -color pink -stipple dot4
+setLayerPreference M13Track -isVisible 1 -isSelectable 1 -color pink -stipple cross
+setLayerPreference M13Pin -isVisible 1 -isSelectable 1 -color pink -stipple cross
+setLayerPreference M13ContPin -isVisible 1 -isSelectable 1 -color pink -stipple dot4
+setLayerPreference M13RB -isVisible 1 -isSelectable 1 -color pink -stipple brick
+setLayerPreference M13ContRB -isVisible 1 -isSelectable 1 -color pink -stipple dot8_2
+setLayerPreference M13Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M13ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M13Text -isVisible 1 -isSelectable 0 -color pink -stippleData 0 0 {}
+setLayerPreference M13EOL -isVisible 1 -isSelectable 1 -color pink -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M13Patch -isVisible 1 -isSelectable 1 -color pink -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M14 -isVisible 1 -isSelectable 1 -color cyan -stipple slash
+setLayerPreference M14Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M14Cont -isVisible 1 -isSelectable 1 -color cyan -stipple dot4
+setLayerPreference M14Track -isVisible 1 -isSelectable 1 -color cyan -stipple cross
+setLayerPreference M14Pin -isVisible 1 -isSelectable 1 -color cyan -stipple cross
+setLayerPreference M14ContPin -isVisible 1 -isSelectable 1 -color cyan -stipple dot4
+setLayerPreference M14RB -isVisible 1 -isSelectable 1 -color cyan -stipple brick
+setLayerPreference M14ContRB -isVisible 1 -isSelectable 1 -color cyan -stipple dot8_2
+setLayerPreference M14Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M14ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M14Text -isVisible 1 -isSelectable 0 -color cyan -stippleData 0 0 {}
+setLayerPreference M14EOL -isVisible 1 -isSelectable 1 -color cyan -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M14Patch -isVisible 1 -isSelectable 1 -color cyan -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M15 -isVisible 1 -isSelectable 1 -color purple -stipple slash
+setLayerPreference M15Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M15Cont -isVisible 1 -isSelectable 1 -color purple -stipple dot4
+setLayerPreference M15Track -isVisible 1 -isSelectable 1 -color purple -stipple cross
+setLayerPreference M15Pin -isVisible 1 -isSelectable 1 -color purple -stipple cross
+setLayerPreference M15ContPin -isVisible 1 -isSelectable 1 -color purple -stipple dot4
+setLayerPreference M15RB -isVisible 1 -isSelectable 1 -color purple -stipple brick
+setLayerPreference M15ContRB -isVisible 1 -isSelectable 1 -color purple -stipple dot8_2
+setLayerPreference M15Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M15ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M15Text -isVisible 1 -isSelectable 0 -color purple -stippleData 0 0 {}
+setLayerPreference M15EOL -isVisible 1 -isSelectable 1 -color purple -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M15Patch -isVisible 1 -isSelectable 1 -color purple -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M16 -isVisible 1 -isSelectable 1 -color olive -stipple slash
+setLayerPreference M16Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M16Cont -isVisible 1 -isSelectable 1 -color olive -stipple dot4
+setLayerPreference M16Track -isVisible 1 -isSelectable 1 -color olive -stipple cross
+setLayerPreference M16Pin -isVisible 1 -isSelectable 1 -color olive -stipple cross
+setLayerPreference M16ContPin -isVisible 1 -isSelectable 1 -color olive -stipple dot4
+setLayerPreference M16RB -isVisible 1 -isSelectable 1 -color olive -stipple brick
+setLayerPreference M16ContRB -isVisible 1 -isSelectable 1 -color olive -stipple dot8_2
+setLayerPreference M16Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M16ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M16Text -isVisible 1 -isSelectable 0 -color olive -stippleData 0 0 {}
+setLayerPreference M16EOL -isVisible 1 -isSelectable 1 -color olive -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M16Patch -isVisible 1 -isSelectable 1 -color olive -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M17 -isVisible 1 -isSelectable 1 -color chocolate -stipple slash
+setLayerPreference M17Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M17Cont -isVisible 1 -isSelectable 1 -color chocolate -stipple dot4
+setLayerPreference M17Track -isVisible 1 -isSelectable 1 -color chocolate -stipple cross
+setLayerPreference M17Pin -isVisible 1 -isSelectable 1 -color chocolate -stipple cross
+setLayerPreference M17ContPin -isVisible 1 -isSelectable 1 -color chocolate -stipple dot4
+setLayerPreference M17RB -isVisible 1 -isSelectable 1 -color chocolate -stipple brick
+setLayerPreference M17ContRB -isVisible 1 -isSelectable 1 -color chocolate -stipple dot8_2
+setLayerPreference M17Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M17ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M17Text -isVisible 1 -isSelectable 0 -color chocolate -stippleData 0 0 {}
+setLayerPreference M17EOL -isVisible 1 -isSelectable 1 -color chocolate -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M17Patch -isVisible 1 -isSelectable 1 -color chocolate -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M18 -isVisible 1 -isSelectable 1 -color deepskyblue -stipple slash
+setLayerPreference M18Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M18Cont -isVisible 1 -isSelectable 1 -color deepskyblue -stipple dot4
+setLayerPreference M18Track -isVisible 1 -isSelectable 1 -color deepskyblue -stipple cross
+setLayerPreference M18Pin -isVisible 1 -isSelectable 1 -color deepskyblue -stipple cross
+setLayerPreference M18ContPin -isVisible 1 -isSelectable 1 -color deepskyblue -stipple dot4
+setLayerPreference M18RB -isVisible 1 -isSelectable 1 -color deepskyblue -stipple brick
+setLayerPreference M18ContRB -isVisible 1 -isSelectable 1 -color deepskyblue -stipple dot8_2
+setLayerPreference M18Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M18ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M18Text -isVisible 1 -isSelectable 0 -color deepskyblue -stippleData 0 0 {}
+setLayerPreference M18EOL -isVisible 1 -isSelectable 1 -color deepskyblue -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M18Patch -isVisible 1 -isSelectable 1 -color deepskyblue -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M19 -isVisible 1 -isSelectable 1 -color maroon -stipple slash
+setLayerPreference M19Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M19Cont -isVisible 1 -isSelectable 1 -color maroon -stipple dot4
+setLayerPreference M19Track -isVisible 1 -isSelectable 1 -color maroon -stipple cross
+setLayerPreference M19Pin -isVisible 1 -isSelectable 1 -color maroon -stipple cross
+setLayerPreference M19ContPin -isVisible 1 -isSelectable 1 -color maroon -stipple dot4
+setLayerPreference M19RB -isVisible 1 -isSelectable 1 -color maroon -stipple brick
+setLayerPreference M19ContRB -isVisible 1 -isSelectable 1 -color maroon -stipple dot8_2
+setLayerPreference M19Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M19ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M19Text -isVisible 1 -isSelectable 0 -color maroon -stippleData 0 0 {}
+setLayerPreference M19EOL -isVisible 1 -isSelectable 1 -color maroon -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M19Patch -isVisible 1 -isSelectable 1 -color maroon -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M20 -isVisible 1 -isSelectable 1 -color salmon -stipple slash
+setLayerPreference M20Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M20Cont -isVisible 1 -isSelectable 1 -color salmon -stipple dot4
+setLayerPreference M20Track -isVisible 1 -isSelectable 1 -color salmon -stipple cross
+setLayerPreference M20Pin -isVisible 1 -isSelectable 1 -color salmon -stipple cross
+setLayerPreference M20ContPin -isVisible 1 -isSelectable 1 -color salmon -stipple dot4
+setLayerPreference M20RB -isVisible 1 -isSelectable 1 -color salmon -stipple brick
+setLayerPreference M20ContRB -isVisible 1 -isSelectable 1 -color salmon -stipple dot8_2
+setLayerPreference M20Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M20ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M20Text -isVisible 1 -isSelectable 0 -color salmon -stippleData 0 0 {}
+setLayerPreference M20EOL -isVisible 1 -isSelectable 1 -color salmon -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M20Patch -isVisible 1 -isSelectable 1 -color salmon -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M21 -isVisible 1 -isSelectable 1 -color violet -stipple slash
+setLayerPreference M21Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M21Cont -isVisible 1 -isSelectable 1 -color violet -stipple dot4
+setLayerPreference M21Track -isVisible 1 -isSelectable 1 -color violet -stipple cross
+setLayerPreference M21Pin -isVisible 1 -isSelectable 1 -color violet -stipple cross
+setLayerPreference M21ContPin -isVisible 1 -isSelectable 1 -color violet -stipple dot4
+setLayerPreference M21RB -isVisible 1 -isSelectable 1 -color violet -stipple brick
+setLayerPreference M21ContRB -isVisible 1 -isSelectable 1 -color violet -stipple dot8_2
+setLayerPreference M21Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M21ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M21Text -isVisible 1 -isSelectable 0 -color violet -stippleData 0 0 {}
+setLayerPreference M21EOL -isVisible 1 -isSelectable 1 -color violet -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M21Patch -isVisible 1 -isSelectable 1 -color violet -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M22 -isVisible 1 -isSelectable 1 -color royalblue -stipple slash
+setLayerPreference M22Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M22Cont -isVisible 1 -isSelectable 1 -color royalblue -stipple dot4
+setLayerPreference M22Track -isVisible 1 -isSelectable 1 -color royalblue -stipple cross
+setLayerPreference M22Pin -isVisible 1 -isSelectable 1 -color royalblue -stipple cross
+setLayerPreference M22ContPin -isVisible 1 -isSelectable 1 -color royalblue -stipple dot4
+setLayerPreference M22RB -isVisible 1 -isSelectable 1 -color royalblue -stipple brick
+setLayerPreference M22ContRB -isVisible 1 -isSelectable 1 -color royalblue -stipple dot8_2
+setLayerPreference M22Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M22ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M22Text -isVisible 1 -isSelectable 0 -color royalblue -stippleData 0 0 {}
+setLayerPreference M22EOL -isVisible 1 -isSelectable 1 -color royalblue -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M22Patch -isVisible 1 -isSelectable 1 -color royalblue -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M23 -isVisible 1 -isSelectable 1 -color darkgreen -stipple slash
+setLayerPreference M23Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M23Cont -isVisible 1 -isSelectable 1 -color darkgreen -stipple dot4
+setLayerPreference M23Track -isVisible 1 -isSelectable 1 -color darkgreen -stipple cross
+setLayerPreference M23Pin -isVisible 1 -isSelectable 1 -color darkgreen -stipple cross
+setLayerPreference M23ContPin -isVisible 1 -isSelectable 1 -color darkgreen -stipple dot4
+setLayerPreference M23RB -isVisible 1 -isSelectable 1 -color darkgreen -stipple brick
+setLayerPreference M23ContRB -isVisible 1 -isSelectable 1 -color darkgreen -stipple dot8_2
+setLayerPreference M23Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M23ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M23Text -isVisible 1 -isSelectable 0 -color darkgreen -stippleData 0 0 {}
+setLayerPreference M23EOL -isVisible 1 -isSelectable 1 -color darkgreen -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M23Patch -isVisible 1 -isSelectable 1 -color darkgreen -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M24 -isVisible 1 -isSelectable 1 -color tomato -stipple slash
+setLayerPreference M24Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M24Cont -isVisible 1 -isSelectable 1 -color tomato -stipple dot4
+setLayerPreference M24Track -isVisible 1 -isSelectable 1 -color tomato -stipple cross
+setLayerPreference M24Pin -isVisible 1 -isSelectable 1 -color tomato -stipple cross
+setLayerPreference M24ContPin -isVisible 1 -isSelectable 1 -color tomato -stipple dot4
+setLayerPreference M24RB -isVisible 1 -isSelectable 1 -color tomato -stipple brick
+setLayerPreference M24ContRB -isVisible 1 -isSelectable 1 -color tomato -stipple dot8_2
+setLayerPreference M24Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M24ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M24Text -isVisible 1 -isSelectable 0 -color tomato -stippleData 0 0 {}
+setLayerPreference M24EOL -isVisible 1 -isSelectable 1 -color tomato -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M24Patch -isVisible 1 -isSelectable 1 -color tomato -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M25 -isVisible 1 -isSelectable 1 -color chartreuse -stipple slash
+setLayerPreference M25Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M25Cont -isVisible 1 -isSelectable 1 -color chartreuse -stipple dot4
+setLayerPreference M25Track -isVisible 1 -isSelectable 1 -color chartreuse -stipple cross
+setLayerPreference M25Pin -isVisible 1 -isSelectable 1 -color chartreuse -stipple cross
+setLayerPreference M25ContPin -isVisible 1 -isSelectable 1 -color chartreuse -stipple dot4
+setLayerPreference M25RB -isVisible 1 -isSelectable 1 -color chartreuse -stipple brick
+setLayerPreference M25ContRB -isVisible 1 -isSelectable 1 -color chartreuse -stipple dot8_2
+setLayerPreference M25Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M25ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M25Text -isVisible 1 -isSelectable 0 -color chartreuse -stippleData 0 0 {}
+setLayerPreference M25EOL -isVisible 1 -isSelectable 1 -color chartreuse -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M25Patch -isVisible 1 -isSelectable 1 -color chartreuse -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M26 -isVisible 1 -isSelectable 1 -color wheat -stipple slash
+setLayerPreference M26Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M26Cont -isVisible 1 -isSelectable 1 -color wheat -stipple dot4
+setLayerPreference M26Track -isVisible 1 -isSelectable 1 -color wheat -stipple cross
+setLayerPreference M26Pin -isVisible 1 -isSelectable 1 -color wheat -stipple cross
+setLayerPreference M26ContPin -isVisible 1 -isSelectable 1 -color wheat -stipple dot4
+setLayerPreference M26RB -isVisible 1 -isSelectable 1 -color wheat -stipple brick
+setLayerPreference M26ContRB -isVisible 1 -isSelectable 1 -color wheat -stipple dot8_2
+setLayerPreference M26Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M26ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M26Text -isVisible 1 -isSelectable 0 -color wheat -stippleData 0 0 {}
+setLayerPreference M26EOL -isVisible 1 -isSelectable 1 -color wheat -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M26Patch -isVisible 1 -isSelectable 1 -color wheat -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M27 -isVisible 1 -isSelectable 1 -color darkred -stipple slash
+setLayerPreference M27Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M27Cont -isVisible 1 -isSelectable 1 -color darkred -stipple dot4
+setLayerPreference M27Track -isVisible 1 -isSelectable 1 -color darkred -stipple cross
+setLayerPreference M27Pin -isVisible 1 -isSelectable 1 -color darkred -stipple cross
+setLayerPreference M27ContPin -isVisible 1 -isSelectable 1 -color darkred -stipple dot4
+setLayerPreference M27RB -isVisible 1 -isSelectable 1 -color darkred -stipple brick
+setLayerPreference M27ContRB -isVisible 1 -isSelectable 1 -color darkred -stipple dot8_2
+setLayerPreference M27Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M27ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M27Text -isVisible 1 -isSelectable 0 -color darkred -stippleData 0 0 {}
+setLayerPreference M27EOL -isVisible 1 -isSelectable 1 -color darkred -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M27Patch -isVisible 1 -isSelectable 1 -color darkred -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M28 -isVisible 1 -isSelectable 1 -color plum -stipple slash
+setLayerPreference M28Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M28Cont -isVisible 1 -isSelectable 1 -color plum -stipple dot4
+setLayerPreference M28Track -isVisible 1 -isSelectable 1 -color plum -stipple cross
+setLayerPreference M28Pin -isVisible 1 -isSelectable 1 -color plum -stipple cross
+setLayerPreference M28ContPin -isVisible 1 -isSelectable 1 -color plum -stipple dot4
+setLayerPreference M28RB -isVisible 1 -isSelectable 1 -color plum -stipple brick
+setLayerPreference M28ContRB -isVisible 1 -isSelectable 1 -color plum -stipple dot8_2
+setLayerPreference M28Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M28ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M28Text -isVisible 1 -isSelectable 0 -color plum -stippleData 0 0 {}
+setLayerPreference M28EOL -isVisible 1 -isSelectable 1 -color plum -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M28Patch -isVisible 1 -isSelectable 1 -color plum -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M29 -isVisible 1 -isSelectable 1 -color teal -stipple slash
+setLayerPreference M29Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M29Cont -isVisible 1 -isSelectable 1 -color teal -stipple dot4
+setLayerPreference M29Track -isVisible 1 -isSelectable 1 -color teal -stipple cross
+setLayerPreference M29Pin -isVisible 1 -isSelectable 1 -color teal -stipple cross
+setLayerPreference M29ContPin -isVisible 1 -isSelectable 1 -color teal -stipple dot4
+setLayerPreference M29RB -isVisible 1 -isSelectable 1 -color teal -stipple brick
+setLayerPreference M29ContRB -isVisible 1 -isSelectable 1 -color teal -stipple dot8_2
+setLayerPreference M29Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M29ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M29Text -isVisible 1 -isSelectable 0 -color teal -stippleData 0 0 {}
+setLayerPreference M29EOL -isVisible 1 -isSelectable 1 -color teal -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M29Patch -isVisible 1 -isSelectable 1 -color teal -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M30 -isVisible 1 -isSelectable 1 -color lime -stipple slash
+setLayerPreference M30Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M30Cont -isVisible 1 -isSelectable 1 -color lime -stipple dot4
+setLayerPreference M30Track -isVisible 1 -isSelectable 1 -color lime -stipple cross
+setLayerPreference M30Pin -isVisible 1 -isSelectable 1 -color lime -stipple cross
+setLayerPreference M30ContPin -isVisible 1 -isSelectable 1 -color lime -stipple dot4
+setLayerPreference M30RB -isVisible 1 -isSelectable 1 -color lime -stipple brick
+setLayerPreference M30ContRB -isVisible 1 -isSelectable 1 -color lime -stipple dot8_2
+setLayerPreference M30Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M30ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M30Text -isVisible 1 -isSelectable 0 -color lime -stippleData 0 0 {}
+setLayerPreference M30EOL -isVisible 1 -isSelectable 1 -color lime -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M30Patch -isVisible 1 -isSelectable 1 -color lime -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M31 -isVisible 1 -isSelectable 1 -color navy -stipple slash
+setLayerPreference M31Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference M31Cont -isVisible 1 -isSelectable 1 -color navy -stipple dot4
+setLayerPreference M31Track -isVisible 1 -isSelectable 1 -color navy -stipple cross
+setLayerPreference M31Pin -isVisible 1 -isSelectable 1 -color navy -stipple cross
+setLayerPreference M31ContPin -isVisible 1 -isSelectable 1 -color navy -stipple dot4
+setLayerPreference M31RB -isVisible 1 -isSelectable 1 -color navy -stipple brick
+setLayerPreference M31ContRB -isVisible 1 -isSelectable 1 -color navy -stipple dot8_2
+setLayerPreference M31Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M31ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference M31Text -isVisible 1 -isSelectable 0 -color navy -stippleData 0 0 {}
+setLayerPreference M31EOL -isVisible 1 -isSelectable 1 -color navy -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference M31Patch -isVisible 1 -isSelectable 1 -color navy -stippleData 8 8 {0x01 0x01 0x01 0x01 0x01 0xff 0x01 0x01}
+setLayerPreference MB4 -isVisible 1 -isSelectable 1 -color #00d000 -stipple backslash
+setLayerPreference MB4Hi -isVisible 1 -isSelectable 1 -color white -stipple backslash
+setLayerPreference MB4Cont -isVisible 1 -isSelectable 1 -color #d0d000 -stipple dot4
+setLayerPreference MB4Pin -isVisible 1 -isSelectable 0 -color #00d000 -stipple cross
+setLayerPreference MB4ContPin -isVisible 1 -isSelectable 0 -color #d0d000 -stipple dot4
+setLayerPreference MB4RB -isVisible 1 -isSelectable 0 -color #00d000 -stipple brick
+setLayerPreference MB4ContRB -isVisible 1 -isSelectable 0 -color #d0d000 -stipple dot8_1
+setLayerPreference MB4Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference MB4ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference MB4Text -isVisible 1 -isSelectable 0 -color #00d000 -stippleData 0 0 {}
+setLayerPreference MB3 -isVisible 1 -isSelectable 1 -color #d0d000 -stipple slash
+setLayerPreference MB3Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference MB3Cont -isVisible 1 -isSelectable 1 -color brown -stipple dot4
+setLayerPreference MB3Pin -isVisible 1 -isSelectable 0 -color #d0d000 -stipple cross
+setLayerPreference MB3ContPin -isVisible 1 -isSelectable 0 -color brown -stipple dot4
+setLayerPreference MB3RB -isVisible 1 -isSelectable 0 -color #d0d000 -stipple brick
+setLayerPreference MB3ContRB -isVisible 1 -isSelectable 0 -color brown -stipple dot8_2
+setLayerPreference MB3Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference MB3ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference MB3Text -isVisible 1 -isSelectable 0 -color #d0d000 -stippleData 0 0 {}
+setLayerPreference MB2 -isVisible 1 -isSelectable 1 -color brown -stipple backslash
+setLayerPreference MB2Hi -isVisible 1 -isSelectable 1 -color white -stipple backslash
+setLayerPreference MB2Cont -isVisible 1 -isSelectable 1 -color orange -stipple dot4
+setLayerPreference MB2Pin -isVisible 1 -isSelectable 0 -color brown -stipple cross
+setLayerPreference MB2ContPin -isVisible 1 -isSelectable 0 -color orange -stipple dot4
+setLayerPreference MB2RB -isVisible 1 -isSelectable 0 -color brown -stipple brick
+setLayerPreference MB2ContRB -isVisible 1 -isSelectable 0 -color orange -stipple dot8_1
+setLayerPreference MB2Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference MB2ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference MB2Text -isVisible 1 -isSelectable 0 -color orange -stippleData 0 0 {}
+setLayerPreference MB1 -isVisible 1 -isSelectable 1 -color orange -stipple slash
+setLayerPreference MB1Hi -isVisible 1 -isSelectable 1 -color white -stipple slash
+setLayerPreference MB1Cont -isVisible 1 -isSelectable 1 -color blue -stipple dot4
+setLayerPreference MB1Pin -isVisible 1 -isSelectable 0 -color orange -stipple cross
+setLayerPreference MB1ContPin -isVisible 1 -isSelectable 0 -color blue -stipple dot4
+setLayerPreference MB1RB -isVisible 1 -isSelectable 0 -color orange -stipple brick
+setLayerPreference MB1ContRB -isVisible 1 -isSelectable 0 -color blue -stipple dot8_2
+setLayerPreference MB1Vio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference MB1ContVio -isVisible 1 -isSelectable 1 -color white -stipple solid
+setLayerPreference MB2Text -isVisible 1 -isSelectable 0 -color orange -stippleData 0 0 {}
+setLayerPreference S64 -isVisible 0 -isSelectable 0 -color sandybrown -stippleData 8 8 {0x01 0x02 0x00 0x00 0x00 0x00 0x00 0x00}
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+getDrawView
+loadWorkspace -name Physical
+win
+set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+set conf_qxconf_file NULL
+set conf_qxlib_file NULL
+set defHierChar /
+set distributed_client_message_echo 1
+set distributed_mmmc_disable_reports_auto_redirection 0
+set eco_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+set enc_enable_print_mode_command_reset_options 1
+set init_gnd_net {1VSS 1VSS0 2VSS 2VSS0 3VSS 3VSS0 4VSS 4VSS0}
+set init_io_file InnovusInputFiles/padframe.io
+set init_lef_file {../../../../pdk/scl_pdk/stdlib/fs120/tech_data/lef/tsl180l4.lef ../../../../pdk/scl_pdk/stdlib/fs120/lef/tsl18fs120_scl.lef ../../../../pdk/scl_pdk/iolib/cio250/cds/lef/tsl18cio250_4lm.lef}
+set init_mmmc_file InnovusInputFiles/viewDefinition.tcl
+set init_pwr_net {1VDD 1VDD0 2VDD 2VDD0 3VDD 3VDD0 4VDD 4VDD0}
+set init_verilog InnovusInputFiles/single_port_ram_netlist.v
+set latch_time_borrow_mode max_borrow
+set pegDefaultResScaleFactor 1
+set pegDetailResScaleFactor 1
+set report_inactive_arcs_format {from to when arc_type sense reason}
+set soft_stack_size_limit 63
+set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+save_global ram.globals
+set init_gnd_net {1VSS 1VSSO 2VSS 2VSSO 3VSS 3VSSO 4VSS 4VSSO}
+set init_pwr_net {1VDD 1VDDO 2VDD 2VDDO 3VDD 3VDDO 4VDD 4VDDO}
+init_design
+selectInst 1VDDO
+deselectAll
+selectInst 1VDDO
+deselectAll
+selectInst 1VDDO
+pan -897.112 115.820
+setDrawView place
+setDrawView ameba
+setDrawView place
+setDrawView fplan
+setDrawView fplan
+setDrawView ameba
+setDrawView place
+setDrawView fplan
+setDrawView ameba
+setDrawView place
+setDrawView fplan
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.0 1710.0 270.0 270.0 1440.0 1440.0 250.32 250.32 1440.0 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 269.92 250250 1439.76 1439.76 250.32 250.32 1439.76 1437.52
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 269.92 250250 1439.76 1439.76 250.32 250.32 1439.76 1437.52
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 250 250 1439.76 1439.76 250.32 250.32 1439.76 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 250.32 250.32 1439.76 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 250.32 250.32 1439.76 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 250.32 250.32 1439.76 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 250.32 250.32 1439.76 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 270.32 270.32 1439.76 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 270.48 270.48 1439.76 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 270.48 270.48 1439.76 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+clearGlobalNets
+clearGlobalNets
+clearGlobalNets
+clearGlobalNets
+clearGlobalNets
+clearGlobalNets
+clearGlobalNets
+globalNetConnect VDD -type pgpin -pin 1VDD -inst *
+globalNetConnect VDD -type pgpin -pin 1VDD -inst *
+deselectAll
+setRouteMode -earlyGlobalHonorMsvRouteConstraint false -earlyGlobalRoutePartitionPinGuide true
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setNanoRouteMode -quiet -droutePostRouteSpreadWire 1
+setUsefulSkewMode -maxSkew false -noBoundary false -useCells {dl03d2 buffd1 bufbd2 buffd7 dl01d1 bufbd1 bufbd3 dl01d2 bufbd4 dl02d4 dl04d4 buffd4 bufbdk bufbda buffd3 dl01d4 dl02d1 dl04d2 dl03d4 dl02d2 buffda bufbdf dl03d1 buffd2 bufbd7 dl04d1 inv0d4 invbdf invbd7 inv0d0 invbd2 invbd4 inv0d7 inv0d1 invbdk inv0da invbda inv0d2} -maxAllowedDelay 1
+setPlaceMode -reset
+setPlaceMode -congEffort medium -timingDriven 0 -modulePlan 0 -clkGateAware 0 -powerDriven 0 -ignoreScan 0 -reorderScan 0 -ignoreSpare 0 -placeIOPins 1 -moduleAwareSpare 0 -preserveRouting 0 -rmAffectedRouting 0 -checkRoute 0 -swapEEQ 0
+setPlaceMode -fp false
+report_message -start_cmd
+getTrialRouteMode -maxRouteLayer -quiet
+getTrialRouteMode -user -maxRouteLayer
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+spInternalUse TDGP ignoreTimingSpare
+set gpsPrivate::coegIsGbSignedSeedNl 0
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -ignoreScan 0
+getPlaceMode -quiet -place_global_exp_auto_finish_floorplan
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -quiet -prePlaceOptSimplifyNetlist
+getPlaceMode -quiet -enablePrePlaceOptimizations
+getPlaceMode -quiet -prePlaceOptDecloneInv
+deleteBufferTree -decloneInv
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -exp_slack_driven -quiet
+setDelayCalMode -engine feDc
+setDelayCalMode -engine aae
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+get_ccopt_clock_trees *
+getPlaceMode -exp_insert_guidance_clock_tree -quiet
+getPlaceMode -exp_cluster_based_high_fanout_buffering -quiet
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -nrgrAware -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -enableCongRepairV3 -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -congEffort
+setPlaceMode -congRepairMaxIter 1
+getDesignMode -quiet -congEffort
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -tdgpDumpStageTiming -quiet
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -ignoreScan false -quiet
+setPlaceMode -reset -repairPlace
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+set gpsPrivate::coegIsGbSignedSeedNl 0
+spInternalUse TDGP recoverTimingSpare
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+spInternalUse TDGP resetIgnoreNetLoad
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+setPlaceMode -fp false
+report_message -start_cmd
+getTrialRouteMode -maxRouteLayer -quiet
+getTrialRouteMode -user -maxRouteLayer
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+spInternalUse TDGP ignoreTimingSpare
+set gpsPrivate::coegIsGbSignedSeedNl 0
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -ignoreScan 0
+getPlaceMode -quiet -place_global_exp_auto_finish_floorplan
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -quiet -prePlaceOptSimplifyNetlist
+getPlaceMode -quiet -enablePrePlaceOptimizations
+getPlaceMode -quiet -prePlaceOptDecloneInv
+deleteBufferTree -decloneInv
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -exp_slack_driven -quiet
+setDelayCalMode -engine feDc
+setDelayCalMode -engine aae
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+get_ccopt_clock_trees *
+getPlaceMode -exp_insert_guidance_clock_tree -quiet
+getPlaceMode -exp_cluster_based_high_fanout_buffering -quiet
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -nrgrAware -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -enableCongRepairV3 -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -congEffort
+setPlaceMode -congRepairMaxIter 1
+getDesignMode -quiet -congEffort
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -tdgpDumpStageTiming -quiet
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -ignoreScan false -quiet
+setPlaceMode -reset -repairPlace
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+set gpsPrivate::coegIsGbSignedSeedNl 0
+spInternalUse TDGP recoverTimingSpare
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+spInternalUse TDGP resetIgnoreNetLoad
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+pan -750.634 390.440
+fit
+fit
+addIoFiller -cell pfeed02000 -prefix FILLER -side n
+addIoFiller -cell pfeed02000 -prefix FILLER -side s
+addIoFiller -cell pfeed02000 -prefix FILLER -side w
+addIoFiller -cell pfeed02000 -prefix FILLER -side e
+addIoFiller -cell pfeed02000 -prefix FILLER -side e
+globalNetConnect 1VDD -type pgpin -pin VDD -override -verbose -netlistOverride
+globalNetConnect 2VDD -type pgpin -pin VDD -override -verbose -netlistOverride
+globalNetConnect 3VDD -type pgpin -pin VDD -override -verbose -netlistOverride
+globalNetConnect 4VDD -type pgpin -pin VDD -override -verbose -netlistOverride
+globalNetConnect 1VSS -type pgpin -pin VSS -override -verbose -netlistOverride
+globalNetConnect 2VSS -type pgpin -pin VSS -override -verbose -netlistOverride
+globalNetConnect 3VSS -type pgpin -pin VSS -override -verbose -netlistOverride
+globalNetConnect 4VSS -type pgpin -pin VSS -override -verbose -netlistOverride
+clearGlobalNets
+globalNetConnect 1VDD -type pgpin -pin VDD -inst {} -override -verbose
+globalNetConnect 2VDD -type pgpin -pin VDD -inst {} -override -verbose
+globalNetConnect 3VDD -type pgpin -pin VDD -inst {} -override -verbose
+globalNetConnect 4VDD -type pgpin -pin VDD -inst {} -override -verbose
+globalNetConnect 1VSS -type pgpin -pin VSS -inst {} -override -verbose
+globalNetConnect 2VSS -type pgpin -pin VSS -inst {} -override -verbose
+globalNetConnect 3VSS -type pgpin -pin VSS -inst {} -override -verbose
+globalNetConnect 4VSS -type pgpin -pin VSS -inst {} -override -verbose
+globalNetConnect 1VDDO -type pgpin -pin VDDO -inst *
+clearGlobalNets
+globalNetConnect 1VDD -type pgpin -pin VDD -inst {} -override -verbose
+globalNetConnect 2VDD -type pgpin -pin VDD -inst {} -override -verbose
+globalNetConnect 3VDD -type pgpin -pin VDD -inst {} -override -verbose
+globalNetConnect 4VDD -type pgpin -pin VDD -inst {} -override -verbose
+globalNetConnect 1VSS -type pgpin -pin VSS -inst {} -override -verbose
+globalNetConnect 2VSS -type pgpin -pin VSS -inst {} -override -verbose
+globalNetConnect 3VSS -type pgpin -pin VSS -inst {} -override -verbose
+globalNetConnect 4VSS -type pgpin -pin VSS -inst {} -override -verbose
+globalNetConnect 1VDDO -type pgpin -pin VDDO -inst *
+globalNetConnect 1VDDO - type pgpin -pin VDDO -override -verbose -netlistOverride
+globalNetConnect 1VDDO -type pgpin -pin VDDO -override -verbose -netlistOverride
+globalNetConnect 2VDDO -type pgpin -pin VDDO -override -verbose -netlistOverride
+globalNetConnect 3VDDO -type pgpin -pin VDDO -override -verbose -netlistOverride
+globalNetConnect 4VDDO -type pgpin -pin VDDO -override -verbose -netlistOverride
+globalNetConnect 4VSSO -type pgpin -pin VSSO -override -verbose -netlistOverride
+globalNetConnect 3VSSO -type pgpin -pin VSSO -override -verbose -netlistOverride
+globalNetConnect 2VSSO -type pgpin -pin VSSO -override -verbose -netlistOverride
+globalNetConnect 1VSSO -type pgpin -pin VSSO -override -verbose -netlistOverride
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer TOP_M -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS} -type core_rings -follow core -layer {top M3 bottom M3 left M2 right M2} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -extend_corner {} -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer TOP_M -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS} -type core_rings -follow core -layer {top M3 bottom M3 left M2 right M2} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -extend_corner {} -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+pan 309.831 0.333
+pan 29.399 -50.223
+pan -107.647 -121.999
+pan -149.270 640.137
+pan 7.347 51.710
+selectWire 270.6000 245.2800 334.4000 247.0800 3 4VDD
+pan -262.629 11.302
+pan -246.672 -7.314
+pan -436.766 -258.644
+pan 91.501 -793.011
+pan 15.957 -90.092
+pan 319.418 60.150
+setAddRingMode -reset
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer TOP_M -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {} -type core_rings -follow core -layer {top M3 bottom M3 left M2 right M2} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -extend_corner {} -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+pan -415.222 607.932
+pan -14.986 -396.372
+pan 9.387 -210.430
+deselectAll
+selectWire 256.0800 1447.8800 1454.1600 1449.6800 3 2VSS
+deleteSelectedFromFPlan
+selectWire 250.6000 1455.0800 1459.6400 1456.8800 3 3VSS
+deleteSelectedFromFPlan
+selectInst 2VSS
+deleteSelectedFromFPlan
+undo
+deselectAll
+selectWire 1290.6000 1458.6800 1354.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 1305.3800 1462.2800 1339.6800 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+selectWire 252.4800 1451.4800 1457.7600 1453.2800 3 3VDD
+deleteSelectedFromFPlan
+selectWire 1375.6000 1458.6800 1439.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 1205.6000 1458.6800 1269.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 1120.6000 1458.6800 1184.4000 1460.4800 3 4VDD
+dbSetStripBoxState [uiGetRecordObjByInfo -objType sWire -rect {1120.6 1458.68 1184.4 1460.48} -layer 3 -name 4VDD] ROUTED
+deleteSelectedFromFPlan
+selectInst 2VDD
+deselectAll
+selectWire 1135.3800 1462.2800 1169.6800 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+selectWire 259.6800 1444.2800 1450.5600 1446.0800 3 2VDD
+deleteSelectedFromFPlan
+selectWire 263.2800 1440.6800 1446.9600 1442.4800 3 1VSS
+deleteSelectedFromFPlan
+selectWire 266.8800 1437.0800 1443.3600 1438.8800 3 1VDD
+deleteSelectedFromFPlan
+pan 450.093 -24.890
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 1035.6000 1458.6800 1099.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 950.6000 1458.6800 1014.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 988.2100 1462.2800 990.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+selectWire 1073.2100 1462.2800 1075.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+pan 63.573 -29.870
+selectWire 865.6000 1458.6800 929.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectInst Data9
+deselectAll
+selectWire 903.2100 1462.2800 905.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+pan 48.381 -0.816
+selectWire 780.6000 1458.6800 844.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 818.2100 1462.2800 820.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+pan 51.280 -7.067
+selectWire 695.6000 1458.6800 759.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 733.2100 1462.2800 735.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+pan 216.457 -24.938
+selectWire 610.6000 1458.6800 674.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectInst Data6
+deselectAll
+selectWire 648.2100 1462.2800 650.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+pan 193.320 4.805
+selectWire 525.6000 1458.6800 589.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectInst Data4
+deleteSelectedFromFPlan
+undo
+deselectAll
+selectWire 440.6000 1458.6800 504.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 478.2100 1462.2800 480.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+pan -40.985 -3.594
+selectWire 563.2100 1462.2800 565.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+pan 31.973 -2.601
+pan 56.632 -6.071
+selectWire 355.6000 1458.6800 419.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 393.2100 1462.2800 395.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+pan 76.837 -5.436
+selectWire 270.6000 1458.6800 334.4000 1460.4800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 308.2100 1462.2800 310.0500 1464.0800 3 4VSS
+deleteSelectedFromFPlan
+pan 69.226 3.443
+selectWire 252.4800 252.4800 254.2800 1453.2800 2 3VDD
+deleteSelectedFromFPlan
+selectWire 256.0800 256.0800 257.8800 1449.6800 2 2VSS
+deleteSelectedFromFPlan
+selectWire 259.6800 259.6800 261.4800 1446.0800 2 2VDD
+deleteSelectedFromFPlan
+selectWire 263.2800 263.2800 265.0800 1442.4800 2 1VSS
+deleteSelectedFromFPlan
+selectWire 266.8800 266.8800 268.6800 1438.8800 2 1VDD
+deleteSelectedFromFPlan
+pan -7.883 29.177
+pan -16.061 109.817
+selectWire 248.8800 1305.4300 250.6800 1339.6300 2 3VSS
+deleteSelectedFromFPlan
+pan 9.373 57.977
+pan -20.795 70.388
+selectWire 248.8800 1135.4300 250.6800 1169.6300 2 3VSS
+deleteSelectedFromFPlan
+pan -11.736 107.193
+pan -13.106 8.269
+deleteSelectedFromFPlan
+selectWire 248.8800 1070.2100 250.6800 1071.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 1072.9400 250.6800 1075.3200 2 3VSS
+deleteSelectedFromFPlan
+pan 31.264 40.154
+pan -0.853 0.494
+pan 4.967 7.586
+pan 3.319 8.801
+selectWire 248.8800 987.9400 250.6800 990.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 985.2100 250.6800 986.3200 2 3VSS
+deleteSelectedFromFPlan
+pan 7.778 2.649
+pan -49.261 170.418
+selectWire 248.8800 902.9400 250.6800 905.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 900.2100 250.6800 901.3200 2 3VSS
+deleteSelectedFromFPlan
+pan 3.267 28.407
+pan -2.845 30.642
+selectWire 248.8800 817.9400 250.6800 820.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 815.2100 250.6800 816.3200 2 3VSS
+deleteSelectedFromFPlan
+pan -3.264 77.582
+pan 7.783 90.387
+selectWire 248.8800 732.9400 250.6800 735.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 730.2100 250.6800 731.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 647.9400 250.6800 650.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 645.2100 250.6800 646.3200 2 3VSS
+deleteSelectedFromFPlan
+pan -33.791 104.181
+selectWire 248.8800 562.9400 250.6800 565.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 560.2100 250.6800 561.3200 2 3VSS
+deleteSelectedFromFPlan
+pan 14.881 134.712
+selectWire 248.8800 477.9400 250.6800 480.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 475.2100 250.6800 476.3200 2 3VSS
+deleteSelectedFromFPlan
+pan -6.794 102.647
+selectWire 248.8800 392.9400 250.6800 395.3200 2 3VSS
+deleteSelectedFromFPlan
+selectWire 248.8800 390.2100 250.6800 391.3200 2 3VSS
+deleteSelectedFromFPlan
+pan 0.148 64.838
+selectWire 248.8800 283.9200 250.6800 321.9800 2 3VSS
+deleteSelectedFromFPlan
+pan -52.239 32.176
+selectWire 294.6300 248.8800 297.1100 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 252.4800 252.4800 1457.7600 254.2800 3 3VDD
+deleteSelectedFromFPlan
+selectWire 256.0800 256.0800 1454.1600 257.8800 3 2VSS
+deleteSelectedFromFPlan
+selectWire 259.6800 259.6800 1450.5600 261.4800 3 2VDD
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 263.2800 263.2800 1446.9600 265.0800 3 1VSS
+deleteSelectedFromFPlan
+selectWire 266.8800 266.8800 1443.3600 268.6800 3 1VDD
+deleteSelectedFromFPlan
+selectWire 270.6000 245.2800 334.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 298.6300 248.8800 299.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 270.6000 241.6800 334.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+pan -81.337 19.082
+selectWire 355.6000 245.2800 419.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 355.6000 241.6800 419.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+selectWire 379.6300 248.8800 382.1100 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 383.6300 248.8800 384.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+pan -73.736 -12.698
+selectWire 464.6300 248.8800 467.1100 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 468.6300 248.8800 469.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 440.6000 245.2800 504.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 440.6000 241.6800 504.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+pan -70.753 -6.344
+pan -73.469 6.440
+selectInst Data25
+deselectAll
+selectWire 525.6000 245.2800 589.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 525.6000 241.6800 589.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+selectWire 549.6300 248.8800 552.1100 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 553.6300 248.8800 554.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+pan -89.704 12.880
+selectInst Data26
+deselectAll
+selectWire 610.6000 245.2800 674.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 610.6000 241.6800 674.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+selectWire 634.6300 248.8800 637.1100 250.6800 3 3VSS
+deselectAll
+selectWire 634.6300 248.8800 637.1100 250.6800 3 3VSS
+deselectAll
+selectWire 634.6300 248.8800 637.1100 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 638.6300 248.8800 639.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+pan -51.515 2.225
+selectWire 695.6000 245.2800 759.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 695.6000 241.6800 759.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+pan -43.237 -0.926
+selectWire 719.6300 248.8800 722.1100 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 723.6300 248.8800 724.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+pan -40.569 -2.777
+pan -39.040 4.508
+selectWire 780.6000 245.2800 844.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 780.6000 241.6800 844.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+selectWire 804.6300 248.8800 807.1100 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 808.6300 248.8800 809.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+pan -36.383 -8.089
+pan -58.737 -5.696
+selectWire 865.6000 245.2800 929.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 865.6000 241.6800 929.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 889.6300 248.8800 892.1100 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 893.6300 248.8800 894.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+pan -81.727 5.012
+selectWire 950.6000 245.2800 1014.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 950.6000 241.6800 1014.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+selectWire 974.6300 248.8800 977.1100 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 978.6300 248.8800 979.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+pan -55.050 -2.776
+selectWire 1035.6000 245.2800 1099.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 1035.6000 241.6800 1099.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+selectWire 1059.6300 248.8800 1062.1100 250.6800 3 3VSS
+pan -59.908 -12.876
+deleteSelectedFromFPlan
+selectWire 1063.6300 248.8800 1064.8400 250.6800 3 3VSS
+deleteSelectedFromFPlan
+pan -31.957 2.979
+selectWire 1120.6000 245.2800 1184.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 1135.3200 248.8800 1169.6200 250.6800 3 3VSS
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 1120.6000 241.6800 1184.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+pan -37.154 4.858
+pan -33.048 -1.198
+pan 20.493 2.394
+pan -80.650 -1.478
+selectWire 1205.6000 245.2800 1269.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 1205.6000 241.6800 1269.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 1305.3200 248.8800 1339.6200 250.6800 3 3VSS
+deleteSelectedFromFPlan
+selectWire 1290.6000 245.2800 1354.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 1290.6000 241.6800 1354.4000 243.4800 3 4VSS
+pan -4.875 -1.034
+deleteSelectedFromFPlan
+pan -123.943 25.768
+selectWire 1375.6000 245.2800 1439.4000 247.0800 3 4VDD
+deleteSelectedFromFPlan
+selectWire 1375.6000 241.6800 1439.4000 243.4800 3 4VSS
+deleteSelectedFromFPlan
+pan -58.131 -20.968
+selectWire 1455.9600 252.4800 1457.7600 1453.2800 2 3VDD
+deleteSelectedFromFPlan
+selectWire 1452.3600 256.0800 1454.1600 1449.6800 2 2VSS
+deleteSelectedFromFPlan
+selectWire 1448.7600 259.6800 1450.5600 1446.0800 2 2VDD
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 1445.1600 263.2800 1446.9600 1442.4800 2 1VSS
+deleteSelectedFromFPlan
+selectWire 1441.5600 266.8800 1443.3600 1438.8800 2 1VDD
+deleteSelectedFromFPlan
+pan -29.254 -76.964
+selectWire 1459.5600 294.6800 1461.3600 297.0600 2 3VSS
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 1459.5600 298.6800 1461.3600 299.7900 2 3VSS
+deleteSelectedFromFPlan
+pan 9.793 -53.737
+deleteSelectedFromFPlan
+selectWire 1459.5600 379.6800 1461.3600 382.0600 2 3VSS
+deleteSelectedFromFPlan
+selectWire 1459.5600 383.6800 1461.3600 384.7900 2 3VSS
+deleteSelectedFromFPlan
+pan -0.753 -40.554
+pan 1.256 -47.961
+selectWire 1459.5600 464.6800 1461.3600 467.0600 2 3VSS
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 1459.5600 468.6800 1461.3600 469.7900 2 3VSS
+deleteSelectedFromFPlan
+pan -3.641 -45.952
+deleteSelectedFromFPlan
+selectWire 1459.5600 549.6800 1461.3600 552.0600 2 3VSS
+deleteSelectedFromFPlan
+selectInst Data15
+deleteSelectedFromFPlan
+undo
+deselectAll
+selectWire 1459.5600 553.6800 1461.3600 554.7900 2 3VSS
+deleteSelectedFromFPlan
+pan -5.273 -82.990
+selectWire 1459.5600 634.6800 1461.3600 637.0600 2 3VSS
+deleteSelectedFromFPlan
+selectWire 1459.5600 638.6800 1461.3600 639.7900 2 3VSS
+deleteSelectedFromFPlan
+pan -3.892 -65.288
+pan 2.762 -57.253
+selectWire 1459.5600 719.6800 1461.3600 722.0600 2 3VSS
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 1459.5600 723.6800 1461.3600 724.7900 2 3VSS
+deleteSelectedFromFPlan
+pan 418.450 196.010
+selectWire 1459.5600 804.6800 1461.3600 807.0600 2 3VSS
+deleteSelectedFromFPlan
+selectWire 1459.5600 808.6800 1461.3600 809.7900 2 3VSS
+deleteSelectedFromFPlan
+selectWire 1459.5600 889.6800 1461.3600 892.0600 2 3VSS
+deleteSelectedFromFPlan
+selectInst Data19
+deleteSelectedFromFPlan
+undo
+deselectAll
+selectWire 1459.5600 893.6800 1461.3600 894.7900 2 3VSS
+deleteSelectedFromFPlan
+selectInst FILLER_E_70
+pan -3.962 -127.053
+deselectAll
+selectWire 1459.5600 974.6800 1461.3600 977.0600 2 3VSS
+deleteSelectedFromFPlan
+selectWire 1459.5600 978.6800 1461.3600 979.7900 2 3VSS
+deleteSelectedFromFPlan
+pan -0.363 -26.163
+pan -7.943 -29.035
+pan 0.787 -22.513
+selectWire 1459.5600 1059.6800 1461.3600 1062.0600 2 3VSS
+deleteSelectedFromFPlan
+pan 0.342 -15.704
+selectWire 1459.5600 1063.6800 1461.3600 1064.7900 2 3VSS
+deleteSelectedFromFPlan
+pan -0.931 -14.919
+pan 0.445 -7.738
+pan -3.486 -3.724
+pan -1.507 -20.780
+pan -3.212 -23.401
+selectWire 1459.5600 1135.3700 1461.3600 1169.5700 2 3VSS
+deleteSelectedFromFPlan
+pan -14.301 -45.495
+pan 1.246 -37.036
+pan -5.310 -41.821
+pan 1.508 -40.051
+pan -0.852 -25.696
+selectWire 1459.5600 1305.3700 1461.3600 1339.5700 2 3VSS
+deleteSelectedFromFPlan
+pan 0.385 -26.451
+pan -0.308 -21.824
+pan -0.463 -46.425
+pan 0.771 -22.750
+pan -1.774 -27.762
+fit
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 290.48 290.48 1439.76 1437.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 290.64 290.64 1419.76 1417.52
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 290.64 290.64 1419.6 1417.36
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 270.64 270.64 1419.6 1417.36
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 270.48 270.48 1439.6 1439.36
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1439.76 1439.76 270.48 270.48 1439.76 1439.2
+uiSetTool select
+getIoFlowFlag
+fit
+deleteIoFiller -cell pfeed02000 -prefix FILLER -side n
+deleteIoFiller -cell pfeed02000 -prefix FILLER -side s
+deleteIoFiller -cell pfeed02000 -prefix FILLER -side w
+deleteIoFiller -cell pfeed02000 -prefix FILLER -side e
+deleteIoFiller -cell pfeed02000 -prefix FILLER -side e
+pan -98.073 -368.096
+pan -1012.487 866.922
+floorPlan -site CoreSite -noSnapToGrid -d 1710 1710 20 20 20 20
+pan -59.597 -848.262
+pan -272.159 756.880
+pan 192.697 -256.266
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.0 1710.0 250.0 250.0 1460.0 1460.0 290.0 290.0 1440.0 1440.0
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1459.92 1459.92 290.08 290.08 1419.76 1419.76
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1459.92 1459.92 290.08 290.08 1419.6 1419.6
+uiSetTool select
+getIoFlowFlag
+fit
+pan -0.916 1.838
+fit
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer TOP_M -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {} -type core_rings -follow core -layer {top M3 bottom M3 left M2 right M2} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -extend_corner {} -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer TOP_M -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS} -type core_rings -follow core -layer {top M3 bottom M3 left M2 right M2} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -extend_corner {} -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+pan -53.287 4.476
+undo
+addRing -skip_via_on_wire_shape Noshape -exclude_selected 1 -skip_via_on_pin Standardcell -center 1 -stacked_via_top_layer TOP_M -type core_rings -jog_distance 0.56 -threshold 0.56 -nets {1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS} -follow core -stacked_via_bottom_layer M1 -layer {bottom M3 top M3 right TOP_M left TOP_M} -width 6 -spacing 2 -offset 2
+pan -347.552 -38.977
+pan 686.545 40.446
+undo
+addRing -skip_via_on_wire_shape Noshape -exclude_selected 1 -skip_via_on_pin Standardcell -center 1 -stacked_via_top_layer TOP_M -type core_rings -jog_distance 0.56 -threshold 0.56 -nets {1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS} -follow core -stacked_via_bottom_layer M1 -layer {bottom M3 top M3 right TOP_M left TOP_M} -width 4 -spacing 1 -offset 2
+pan -213.544 -21.619
+pan 605.974 393.387
+pan -81.459 -109.274
+pan 206.706 -8.505
+pan -99.795 -55.364
+pan -202.619 -69.234
+pan -170.544 -20.340
+pan -147.718 -3.682
+pan -164.104 23.229
+pan -344.087 18.302
+pan -167.590 7.016
+pan 83.634 -90.659
+pan 13.693 -105.697
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1459.92 1459.92 290.08 290.08 1417.6 1419.6
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -b 0.0 0.0 1710.24 1710.24 249.76 249.76 1459.92 1459.92 290.08 290.08 1417.36 1419.6
+uiSetTool select
+getIoFlowFlag
+fit
+addRing -skip_via_on_wire_shape Noshape -exclude_selected 1 -skip_via_on_pin Standardcell -center 1 -stacked_via_top_layer TOP_M -type core_rings -jog_distance 0.56 -threshold 0.56 -nets {1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS} -follow core -stacked_via_bottom_layer M1 -layer {bottom M3 top M3 right TOP_M left TOP_M} -width 4 -spacing 1 -offset 2
+gui_select -rect {2349.999 695.203 2306.295 701.162}
+pan -52.292 -195.688
+pan 178.316 4.458
+pan 334.980 0.000
+fit
+sroute -connect {blockPin corePin padPin padRing floatingStripe secondaryPowerPin} -layerChangeRange {M1 TOP_M} -blockPinTarget nearestTarget -padPinPortConnect {allPort oneGeom} -padPinTarget nearestTarget -corePinTarget firstAfterRowEnd -floatingStripeTarget {blockring ring stripe padring ringpin blockpin followpin} -allowjogging 1 -crossoverViaLayerRange {M1 TOP_M} -nets {1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS} -allowLayerChange 1 -blockPin useLef -targetViaLayerRange {M1 TOP_M}
+undo
+getFillerMode -quiet
+addIoFiller -cell pfeed02000 -prefix FILLER -side n
+addIoFiller -cell pfeed02000 -prefix FILLER -side s
+addIoFiller -cell pfeed02000 -prefix FILLER -side w
+addIoFiller -cell pfeed02000 -prefix FILLER -side e
+addIoFiller -cell pfeed02000 -prefix FILLER -side e
+sroute -connect {blockPin corePin padPin padRing floatingStripe secondaryPowerPin} -layerChangeRange {M1 TOP_M} -blockPinTarget nearestTarget -padPinPortConnect {allPort oneGeom} -padPinTarget nearestTarget -corePinTarget firstAfterRowEnd -floatingStripeTarget {blockring ring stripe padring ringpin blockpin followpin} -allowjogging 1 -crossoverViaLayerRange {M1 TOP_M} -nets {1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS} -allowLayerChange 1 -blockPin useLef -targetViaLayerRange {M1 TOP_M}
+pan 30.500 -80.520
+pan 3.325 -38.233
+pan -1.994 -105.057
+pan 5.867 -83.702
+pan 97.783 -17.209
+pan 0.665 -5.319
+pan 4.496 -0.749
+pan 555.231 -50.952
+pan 404.622 24.727
+pan -15.698 145.926
+pan -5.955 188.937
+pan 32.482 229.540
+pan -246.556 106.390
+pan -293.840 -42.218
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit TOP_M -max_same_layer_jog_length 0.88 -padcore_ring_bottom_layer_limit M3 -set_to_set_distance 40 -skip_via_on_pin Standardcell -stacked_via_top_layer TOP_M -padcore_ring_top_layer_limit TOP_M -spacing 0.46 -xleft_offset 10 -merge_stripes_value 0.56 -layer TOP_M -block_ring_bottom_layer_limit M3 -width 2 -nets {1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS} -stacked_via_bottom_layer M1
+pan 322.550 -283.709
+fit
+fit
+setPlaceMode -fp false
+report_message -start_cmd
+getTrialRouteMode -maxRouteLayer -quiet
+getTrialRouteMode -user -maxRouteLayer
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+spInternalUse TDGP ignoreTimingSpare
+set gpsPrivate::coegIsGbSignedSeedNl 0
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -ignoreScan 0
+getPlaceMode -quiet -place_global_exp_auto_finish_floorplan
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -exp_slack_driven -quiet
+setDelayCalMode -engine feDc
+setDelayCalMode -engine aae
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+get_ccopt_clock_trees *
+getPlaceMode -exp_insert_guidance_clock_tree -quiet
+getPlaceMode -exp_cluster_based_high_fanout_buffering -quiet
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -nrgrAware -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -enableCongRepairV3 -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -congEffort
+setPlaceMode -congRepairMaxIter 1
+getDesignMode -quiet -congEffort
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -tdgpDumpStageTiming -quiet
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -ignoreScan false -quiet
+setPlaceMode -reset -repairPlace
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+set gpsPrivate::coegIsGbSignedSeedNl 0
+spInternalUse TDGP recoverTimingSpare
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+spInternalUse TDGP resetIgnoreNetLoad
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+selectWire 1269.9200 265.5400 1271.9200 1442.4600 4 3VDD
+deselectAll
+pan -93.474 -24.640
+pan -200.971 -44.072
+setPlaceMode -fp false
+report_message -start_cmd
+getTrialRouteMode -maxRouteLayer -quiet
+getTrialRouteMode -user -maxRouteLayer
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+spInternalUse TDGP ignoreTimingSpare
+set gpsPrivate::coegIsGbSignedSeedNl 0
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -ignoreScan 0
+setPlaceMode -quiet -clusterMode false
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -useNP
+getPlaceMode -useNP -quiet
+getPlaceMode -user -WLHigheffort
+getPlaceMode -WLHigheffort -quiet
+setDelayCalMode -engine feDc
+setDelayCalMode -engine aae
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -nrgrAware -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -enableCongRepairV3 -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -congEffort
+setPlaceMode -congRepairMaxIter 1
+getDesignMode -quiet -congEffort
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -quiet -clusterMode auto
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -ignoreScan false -quiet
+setPlaceMode -reset -repairPlace
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+set gpsPrivate::coegIsGbSignedSeedNl 0
+spInternalUse TDGP recoverTimingSpare
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+spInternalUse TDGP resetIgnoreNetLoad
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+setPlaceMode -fp false
+report_message -start_cmd
+getTrialRouteMode -maxRouteLayer -quiet
+getTrialRouteMode -user -maxRouteLayer
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+spInternalUse TDGP ignoreTimingSpare
+set gpsPrivate::coegIsGbSignedSeedNl 0
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -ignoreScan 0
+setPlaceMode -quiet -clusterMode false
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -useNP
+getPlaceMode -useNP -quiet
+getPlaceMode -user -WLHigheffort
+getPlaceMode -WLHigheffort -quiet
+setDelayCalMode -engine feDc
+setDelayCalMode -engine aae
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -nrgrAware -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -enableCongRepairV3 -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -congEffort
+setPlaceMode -congRepairMaxIter 1
+getDesignMode -quiet -congEffort
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -quiet -clusterMode auto
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -ignoreScan false -quiet
+setPlaceMode -reset -repairPlace
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+set gpsPrivate::coegIsGbSignedSeedNl 0
+spInternalUse TDGP recoverTimingSpare
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+spInternalUse TDGP resetIgnoreNetLoad
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+getCTSMode -engine -quiet
+setSrouteMode -viaConnectToShape { noshape }
+sroute -connect { corePin } -layerChangeRange { M1(1) TOP_M(4) } -blockPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -allowJogging 1 -crossoverViaLayerRange { M1(1) TOP_M(4) } -nets { 1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS } -allowLayerChange 1 -targetViaLayerRange { M1(1) TOP_M(4) }
+setSrouteMode -viaConnectToShape { noshape }
+sroute -connect { corePin } -layerChangeRange { M1(1) TOP_M(4) } -blockPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -allowJogging 1 -crossoverViaLayerRange { M1(1) TOP_M(4) } -nets { 1VDD 1VSS 2VDD 2VSS 3VDD 3VSS 4VDD 4VSS } -allowLayerChange 1 -targetViaLayerRange { M1(1) TOP_M(4) }
+pan -566.086 -1.220
+pan -12.189 0.051
+setRouteMode -earlyGlobalHonorMsvRouteConstraint false -earlyGlobalRoutePartitionPinGuide true
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setUsefulSkewMode -maxSkew false -noBoundary false -useCells {dl04d1 bufbd7 buffd2 dl03d1 bufbdf buffda dl02d2 dl03d4 dl04d2 dl02d1 dl01d4 buffd3 bufbda bufbdk buffd4 dl04d4 dl02d4 bufbd4 dl01d2 bufbd3 bufbd1 dl01d1 buffd7 bufbd2 buffd1 dl03d2 inv0d2 invbda inv0da invbdk inv0d1 inv0d7 invbd4 invbd2 inv0d0 invbd7 invbdf inv0d4} -maxAllowedDelay 1
+setPlaceMode -reset
+setPlaceMode -congEffort medium -timingDriven 1 -modulePlan 1 -clkGateAware 1 -powerDriven 1 -ignoreScan 0 -reorderScan 0 -ignoreSpare 0 -placeIOPins 1 -moduleAwareSpare 0 -preserveRouting 0 -rmAffectedRouting 0 -checkRoute 0 -swapEEQ 0
+setRouteMode -earlyGlobalHonorMsvRouteConstraint false -earlyGlobalRoutePartitionPinGuide true
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setUsefulSkewMode -maxSkew false -noBoundary false -useCells {dl04d1 bufbd7 buffd2 dl03d1 bufbdf buffda dl02d2 dl03d4 dl04d2 dl02d1 dl01d4 buffd3 bufbda bufbdk buffd4 dl04d4 dl02d4 bufbd4 dl01d2 bufbd3 bufbd1 dl01d1 buffd7 bufbd2 buffd1 dl03d2 inv0d2 invbda inv0da invbdk inv0d1 inv0d7 invbd4 invbd2 inv0d0 invbd7 invbdf inv0d4} -maxAllowedDelay 1
+setPlaceMode -fp false
+report_message -start_cmd
+getTrialRouteMode -maxRouteLayer -quiet
+getTrialRouteMode -user -maxRouteLayer
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -adaptive -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+spInternalUse TDGP ignoreTimingSpare
+set gpsPrivate::coegIsGbSignedSeedNl 0
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -powerDriven 1
+setPlaceMode -ignoreScan 0
+setPlaceMode -quiet -clusterMode false
+getPlaceMode -quiet -IOSlackAdjust
+getAnalysisMode -quiet -honorClockDomains
+getAnalysisMode -quiet -honorClockDomains
+set delaycal_use_default_delay_limit 101
+set delaycal_default_net_delay 0
+set delaycal_default_net_load 0
+set delaycal_default_net_load_ignore_for_ilm 0
+getAnalysisMode -clkSrcPath -quiet
+getAnalysisMode -clockPropagation -quiet
+getAnalysisMode -checkType -quiet
+buildTimingGraph
+getDelayCalMode -ignoreNetLoad -quiet
+getDelayCalMode -ignoreNetLoad -quiet
+setDelayCalMode -ignoreNetLoad true -quiet
+get_global timing_enable_path_group_priority
+get_global timing_constraint_enable_group_path_resetting
+set_global timing_enable_path_group_priority false
+set_global timing_constraint_enable_group_path_resetting false
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2reg_tmp.5019 -from {0x9f 0xa2} -to 0xa3 -ignore_source_of_trigger_arc
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2out_tmp.5019 -from {0xa6 0xa9} -to 0xaa -ignore_source_of_trigger_arc
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2reg_tmp.5019 -from 0xac -to 0xad
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2out_tmp.5019 -from 0xb0 -to 0xb1
+setPathGroupOptions reg2reg_tmp.5019 -effortLevel high
+isAnalysisModeSetup
+getAnalysisMode -analysisType -quiet
+isAnalysisModeSetup
+all_setup_analysis_views
+all_hold_analysis_views
+get_analysis_view $view -delay_corner
+get_delay_corner $dcCorner -power_domain_list
+get_delay_corner $dcCorner -library_set
+get_library_set $libSetName -si
+get_delay_corner $dcCorner -late_library_set
+get_delay_corner $dcCorner -early_library_set
+get_analysis_view $view -delay_corner
+get_delay_corner $dcCorner -power_domain_list
+get_delay_corner $dcCorner -library_set
+get_library_set $libSetName -si
+get_delay_corner $dcCorner -late_library_set
+get_delay_corner $dcCorner -early_library_set
+reset_path_group -name in2reg_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+setDelayCalMode -ignoreNetLoad false
+set delaycal_use_default_delay_limit 1000
+set delaycal_default_net_delay 1000ps
+set delaycal_default_net_load 0.5pf
+set delaycal_default_net_load_ignore_for_ilm 0
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getAnalysisMode -quiet -honorClockDomains
+reset_path_group -name reg2reg_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name reg2out_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name in2out_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+set_global timing_enable_path_group_priority $gpsPrivate::optSave_ctePGPriority
+set_global timing_constraint_enable_group_path_resetting $gpsPrivate::optSave_ctePGResetting
+getPlaceMode -user -useNP
+getPlaceMode -useNP -quiet
+getPlaceMode -user -WLHigheffort
+getPlaceMode -WLHigheffort -quiet
+setPlaceMode -useNP 1 -WLHigheffort 0
+setDelayCalMode -engine feDc
+getTrialRouteMode -user -honorClockSpecNDR
+getTrialRouteMode -user -clkNetRoutingDemandInTracks
+getTrialRouteMode -user -maxRouteLayer
+getTrialRouteMode -user -minRouteLayer
+getTrialRouteMode -user -routeGuide
+getTrialRouteMode -quiet -handlePreroute
+getGlobalRouteMode -user -earlyGlobalMaxRouteLayer
+getGlobalRouteMode -user -earlyGlobalMinRouteLayer
+getGlobalRouteMode -user -earlyGlobalCapacityScreen
+setDelayCalMode -engine aae
+setPlaceMode -reset -useNP
+setPlaceMode -reset -WLHigheffort
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -nrgrAware -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -enableCongRepairV3 -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -congEffort
+setPlaceMode -congRepairMaxIter 1
+getDesignMode -quiet -congEffort
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -quiet -clusterMode auto
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -ignoreScan false -quiet
+setPlaceMode -reset -repairPlace
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+set gpsPrivate::coegIsGbSignedSeedNl 0
+spInternalUse TDGP recoverTimingSpare
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+spInternalUse TDGP resetIgnoreNetLoad
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+setPlaceMode -fp false
+report_message -start_cmd
+getTrialRouteMode -maxRouteLayer -quiet
+getTrialRouteMode -user -maxRouteLayer
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -adaptive -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+spInternalUse TDGP ignoreTimingSpare
+set gpsPrivate::coegIsGbSignedSeedNl 0
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -powerDriven 1
+setPlaceMode -ignoreScan 0
+setPlaceMode -quiet -clusterMode false
+getPlaceMode -quiet -IOSlackAdjust
+getAnalysisMode -quiet -honorClockDomains
+getAnalysisMode -quiet -honorClockDomains
+set delaycal_use_default_delay_limit 101
+set delaycal_default_net_delay 0
+set delaycal_default_net_load 0
+set delaycal_default_net_load_ignore_for_ilm 0
+getAnalysisMode -clkSrcPath -quiet
+getAnalysisMode -clockPropagation -quiet
+getAnalysisMode -checkType -quiet
+buildTimingGraph
+getDelayCalMode -ignoreNetLoad -quiet
+getDelayCalMode -ignoreNetLoad -quiet
+setDelayCalMode -ignoreNetLoad true -quiet
+get_global timing_enable_path_group_priority
+get_global timing_constraint_enable_group_path_resetting
+set_global timing_enable_path_group_priority false
+set_global timing_constraint_enable_group_path_resetting false
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2reg_tmp.5019 -from {0xb5 0xb8} -to 0xb9 -ignore_source_of_trigger_arc
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2out_tmp.5019 -from {0xbc 0xbf} -to 0xc0 -ignore_source_of_trigger_arc
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2reg_tmp.5019 -from 0xc2 -to 0xc3
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2out_tmp.5019 -from 0xc6 -to 0xc7
+setPathGroupOptions reg2reg_tmp.5019 -effortLevel high
+reset_path_group -name in2reg_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+setDelayCalMode -ignoreNetLoad false
+set delaycal_use_default_delay_limit 1000
+set delaycal_default_net_delay 1000ps
+set delaycal_default_net_load 0.5pf
+set delaycal_default_net_load_ignore_for_ilm 0
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getAnalysisMode -quiet -honorClockDomains
+reset_path_group -name reg2reg_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name reg2out_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name in2out_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+set_global timing_enable_path_group_priority $gpsPrivate::optSave_ctePGPriority
+set_global timing_constraint_enable_group_path_resetting $gpsPrivate::optSave_ctePGResetting
+getPlaceMode -user -useNP
+getPlaceMode -useNP -quiet
+getPlaceMode -user -WLHigheffort
+getPlaceMode -WLHigheffort -quiet
+setPlaceMode -useNP 1 -WLHigheffort 0
+setDelayCalMode -engine feDc
+getTrialRouteMode -user -honorClockSpecNDR
+getTrialRouteMode -user -clkNetRoutingDemandInTracks
+getTrialRouteMode -user -maxRouteLayer
+getTrialRouteMode -user -minRouteLayer
+getTrialRouteMode -user -routeGuide
+getTrialRouteMode -quiet -handlePreroute
+getGlobalRouteMode -user -earlyGlobalMaxRouteLayer
+getGlobalRouteMode -user -earlyGlobalMinRouteLayer
+getGlobalRouteMode -user -earlyGlobalCapacityScreen
+setDelayCalMode -engine aae
+setPlaceMode -reset -useNP
+setPlaceMode -reset -WLHigheffort
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -nrgrAware -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -enableCongRepairV3 -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -congEffort
+setPlaceMode -congRepairMaxIter 1
+getDesignMode -quiet -congEffort
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -quiet -clusterMode auto
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -ignoreScan false -quiet
+setPlaceMode -reset -repairPlace
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+set gpsPrivate::coegIsGbSignedSeedNl 0
+spInternalUse TDGP recoverTimingSpare
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+spInternalUse TDGP resetIgnoreNetLoad
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+pan -22.063 51.907
+pan -7.567 43.274
+pan -2.878 10.233
+pan 303.991 -874.819
+setPlaceMode -fp false
+report_message -start_cmd
+getTrialRouteMode -maxRouteLayer -quiet
+getTrialRouteMode -user -maxRouteLayer
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -adaptive -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+spInternalUse TDGP ignoreTimingSpare
+set gpsPrivate::coegIsGbSignedSeedNl 0
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -powerDriven 1
+setPlaceMode -ignoreScan 0
+getPlaceMode -quiet -place_global_exp_auto_finish_floorplan
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -quiet -prePlaceOptSimplifyNetlist
+getPlaceMode -quiet -enablePrePlaceOptimizations
+getPlaceMode -quiet -prePlaceOptDecloneInv
+deleteBufferTree -decloneInv
+getAnalysisMode -quiet -honorClockDomains
+getPlaceMode -honorUserPathGroup -quiet
+getAnalysisMode -quiet -honorClockDomains
+set delaycal_use_default_delay_limit 101
+set delaycal_default_net_delay 0
+set delaycal_default_net_load 0
+set delaycal_default_net_load_ignore_for_ilm 0
+getAnalysisMode -clkSrcPath -quiet
+getAnalysisMode -clockPropagation -quiet
+getAnalysisMode -checkType -quiet
+buildTimingGraph
+getDelayCalMode -ignoreNetLoad -quiet
+getDelayCalMode -ignoreNetLoad -quiet
+setDelayCalMode -ignoreNetLoad true -quiet
+get_global timing_enable_path_group_priority
+get_global timing_constraint_enable_group_path_resetting
+set_global timing_enable_path_group_priority false
+set_global timing_constraint_enable_group_path_resetting false
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2reg_tmp.5019 -from {0xcb 0xce} -to 0xcf -ignore_source_of_trigger_arc
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2out_tmp.5019 -from {0xd2 0xd5} -to 0xd6 -ignore_source_of_trigger_arc
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2reg_tmp.5019 -from 0xd8 -to 0xd9
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2out_tmp.5019 -from 0xdc -to 0xdd
+setPathGroupOptions reg2reg_tmp.5019 -effortLevel high
+reset_path_group -name in2reg_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+setDelayCalMode -ignoreNetLoad false
+set delaycal_use_default_delay_limit 1000
+set delaycal_default_net_delay 1000ps
+set delaycal_default_net_load 0.5pf
+set delaycal_default_net_load_ignore_for_ilm 0
+getPlaceMode -exp_slack_driven -quiet
+getAnalysisMode -quiet -honorClockDomains
+setDelayCalMode -engine feDc
+getTrialRouteMode -user -honorClockSpecNDR
+getTrialRouteMode -user -clkNetRoutingDemandInTracks
+getTrialRouteMode -user -maxRouteLayer
+getTrialRouteMode -user -minRouteLayer
+getTrialRouteMode -user -routeGuide
+getTrialRouteMode -quiet -handlePreroute
+getGlobalRouteMode -user -earlyGlobalMaxRouteLayer
+getGlobalRouteMode -user -earlyGlobalMinRouteLayer
+getGlobalRouteMode -user -earlyGlobalCapacityScreen
+getTrialRouteMode -user -honorClockSpecNDR
+getTrialRouteMode -user -clkNetRoutingDemandInTracks
+getTrialRouteMode -user -maxRouteLayer
+getTrialRouteMode -user -minRouteLayer
+getTrialRouteMode -user -routeGuide
+getTrialRouteMode -quiet -handlePreroute
+getGlobalRouteMode -user -earlyGlobalMaxRouteLayer
+getGlobalRouteMode -user -earlyGlobalMinRouteLayer
+getGlobalRouteMode -user -earlyGlobalCapacityScreen
+getTrialRouteMode -user -honorClockSpecNDR
+getTrialRouteMode -user -clkNetRoutingDemandInTracks
+getTrialRouteMode -user -maxRouteLayer
+getTrialRouteMode -user -minRouteLayer
+getTrialRouteMode -user -routeGuide
+getTrialRouteMode -quiet -handlePreroute
+getGlobalRouteMode -user -earlyGlobalMaxRouteLayer
+getGlobalRouteMode -user -earlyGlobalMinRouteLayer
+getGlobalRouteMode -user -earlyGlobalCapacityScreen
+setDelayCalMode -engine aae
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+get_ccopt_clock_trees *
+getPlaceMode -exp_insert_guidance_clock_tree -quiet
+getPlaceMode -exp_cluster_based_high_fanout_buffering -quiet
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -nrgrAware -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -congEffort -quiet
+getPlaceMode -enableCongRepairV3 -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -congEffort
+setPlaceMode -congRepairMaxIter 1
+getDesignMode -quiet -congEffort
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -tdgpDumpStageTiming -quiet
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+getPlaceMode -exp_slack_driven -quiet
+reset_path_group -name reg2reg_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name reg2out_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name in2out_tmp.5019
+set_global _is_ipo_interactive_path_groups 0
+set_global timing_enable_path_group_priority $gpsPrivate::optSave_ctePGPriority
+set_global timing_constraint_enable_group_path_resetting $gpsPrivate::optSave_ctePGResetting
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -ignoreScan false -quiet
+setPlaceMode -reset -repairPlace
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+set gpsPrivate::coegIsGbSignedSeedNl 0
+spInternalUse TDGP recoverTimingSpare
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -place_global_exp_special_setup_for_nvidia -quiet
+spInternalUse TDGP resetIgnoreNetLoad
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+pan -177.367 -228.192
+pan 108.910 -383.777
+setOptMode -fixCap true -fixTran true -fixFanoutload false
+optDesign -preCTS
+pan -167.449 -18.562
+pan -16.837 -17.358
+pan 755.117 234.418
+pan 300.802 180.481
+fit
+optDesign -postCTSrouteDesign -globalDetail
+setAnalysisMode -analysisType onChipVariation -cppr both
+setOptMode -fixCap true -fixTran true -fixFanoutload false
+routeDesign -globalDetail
+setAnalysisMode -analysisType onChipVariation -cppr both
+setOptMode -fixCap true -fixTran true -fixFanoutload false
+optDesign -postRoute
+addFiller -cell feedth9 -prefix FILLER -doDRC
+addFiller -cell feedth3 -prefix FILLER -doDRC
+addFiller -cell feedth -prefix FILLER -doDRC
+fit
+streamOut Top_FINAL.gds -mapFile /home/vlsi6/pdk/scl_pdk/stdlib/fs120/tech_data/lef/gds2_fe_4l.map -libName DesignLib -merge {/home/vlsi6/pdk/scl_pdk/stdlib/fs120/gds/tsl18fs120.gds /home/vlsi6/pdk/scl_pdk/iolib/cio250/gds/tsl18cio250_4lm.gds} -uniquifyCellNames -units 1000 -mode ALL
+getCTSMode -engine -quiet

@@ -1,0 +1,4 @@
+ncelab(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+ncelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+ncelab: Memory Usage - 49.9M program + 32.2M data = 82.2M total (Peak 87.0M)
+ncelab: CPU Usage - 0.0s system + 0.0s user = 0.0s total (0.3s, 14.1% cpu)
